@@ -99,9 +99,9 @@ export function Header() {
 						))}
 					</div>
 					<div className="flex flex-col gap-2">
-						<Button variant="outline" className="w-full">
+						{/* <Button variant="outline" className="w-full">
 							Sign In
-						</Button>
+						</Button> */}
 						<Button className="w-full">Apply</Button>
 					</div>
 				</div>
