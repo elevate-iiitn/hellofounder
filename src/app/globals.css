@@ -120,3 +120,311 @@
     @apply bg-background text-foreground;
   }
 }
+/* Duplicate the content visually seamless by shifting -50% (we duplicate the list) */
+/* ---------- utilities & components (replace broken nested layers from here) ---------- */
+
+@layer utilities {
+  /* pixel-perfect marquee keyframes (uses --marquee-width if you use the JS marquee) */
+  @keyframes marquee-js {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--marquee-width))); }
+  }
+
+  .marquee-outer { @apply overflow-hidden w-full; }
+
+  .marquee-inner-js {
+    display: flex; /* two blocks side-by-side */
+    animation: marquee-js var(--marquee-duration, 18s) linear infinite;
+    will-change: transform;
+    transform: translateZ(0); /* promote to GPU compositing layer */
+  }
+
+  .marquee-outer:hover .marquee-inner-js {
+    animation-play-state: paused;
+  }
+
+  .marquee-first,
+  .marquee-second {
+    @apply inline-flex items-center whitespace-nowrap;
+  }
+
+  .marquee-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full
+      bg-card text-card-foreground border border-border
+      shadow-sm font-medium text-sm;
+    flex: 0 0 auto;       /* prevent shrinking */
+    margin-right: 0.5rem; /* spacing between chips (use margin, not gap) */
+  }
+  
+}
+@layer components {
+  /* ---------- Ambient blobs (keeps page filled, optional) ---------- */
+  .ambient-left-blob {
+    position: absolute;
+    left: -8%;
+    top: 8%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(closest-side, rgba(0,231,255,0.06), transparent 45%),
+                radial-gradient(closest-side, rgba(0,255,180,0.03), transparent 60%);
+    filter: blur(60px);
+    transform: translateZ(0);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .ambient-right-blob {
+    position: absolute;
+    right: -6%;
+    top: 18%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(closest-side, rgba(0,220,185,0.05), transparent 40%),
+                radial-gradient(closest-side, rgba(0,231,255,0.02), transparent 60%);
+    filter: blur(48px);
+    transform: translateZ(0);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* -------------------- INSIDE CARD / BORDER -------------------- */
+  .inside-border {
+    border-radius: 1rem;
+    padding: 0.5rem; /* space for the gradient border */
+    border: 2px solid transparent;
+    border-image: linear-gradient(90deg, #00e7ff 0%, #00dfb8 45%, #4affad 100%) 1;
+    display: block;
+    position: relative;
+    height: 100%; /* fill parent column height (parent should be md:items-stretch) */
+    transition: box-shadow 220ms ease, transform 220ms cubic-bezier(.2,.9,.3,1);
+    box-shadow: 0 8px 30px rgba(0, 210, 180, 0.06);
+    background: transparent;
+  }
+
+  /* Card interior is a column flex container — this lets us pin footer to bottom */
+  .inside-card {
+    border-radius: 0.75rem;
+    padding: 1.4rem;              /* tuned to match left text height */
+    background: transparent !important;
+    position: relative;
+    overflow: hidden;
+    color: rgba(255,255,255,0.92);
+    min-width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;                /* grow to fill the border wrapper */
+  }
+
+  /* Title / body text */
+  .inside-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #cffff4;
+    margin-bottom: 0.6rem;
+  }
+
+  .inside-subtext {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+  }
+
+  /* replace bullets with inline icon rows */
+  .inside-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    color: rgba(255,255,255,0.86);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .inline-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .inline-row .icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin-top: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .accent {
+    background: linear-gradient(90deg, #00e7ff, #00dfb8, #4affad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  /* thin divider between content and footer */
+  .card-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.03);
+    margin: 10px 0;
+  }
+
+  .card-divider.thin { margin-top: 12px; margin-bottom: 8px; opacity: 0.9; }
+
+  /* ---------- footer pinned to bottom ---------- */
+  .card-footer {
+    margin-top: auto;            /* pushes footer to bottom of card */
+    border-top: 1px solid rgba(255,255,255,0.03);
+    padding-top: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+  }
+
+  .small-meta { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+
+  .pill {
+    padding: .45rem .8rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg,#00e7ff,#00dfb8);
+    color: #02221b;
+    font-weight: 700;
+    border: none;
+    font-size: .9rem;
+    box-shadow: 0 6px 18px rgba(0,210,180,0.08);
+    cursor: pointer;
+  }
+
+  /* ---------- CHIP CAPSULES (mini cards) ---------- */
+  .chip-card {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.36rem 0.9rem;
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255,255,255,0.95);
+    font-size: 0.92rem;
+    font-weight: 800;
+    cursor: pointer;
+    user-select: none;
+
+    /* match card border (thinner) */
+    border: 1.5px solid transparent;
+    border-image: linear-gradient(90deg, #00e7ff 0%, #00dfb8 45%, #4affad 100%) 1;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+    transition: transform 160ms cubic-bezier(.2,.9,.3,1), box-shadow 180ms ease, background 160ms ease;
+    padding-block: 0.42rem;
+    outline: none;
+  }
+
+  /* mouse-tracked radial spotlight (follows cursor) */
+  .chip-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(circle at var(--chip-mx, 50%) var(--chip-my, 50%),
+      color-mix(in srgb, var(--chip-spot, rgba(0,229,255,0.18)) 95%, transparent 5%),
+      transparent 55%);
+    opacity: calc(var(--chip-m-o, 0));
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    transition: opacity 200ms linear, background-position 80ms linear;
+    z-index: 1;
+  }
+
+  /* clipped glossy sweep inside the chip */
+  .chip-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transform: translateX(-40%) skewX(-12deg);
+    transition: transform 380ms cubic-bezier(.2,.9,.3,1), opacity 260ms ease;
+    z-index: 2;
+  }
+
+  .chip-card:hover,
+  .chip-card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,210,180,0.08);
+  }
+
+  .chip-card:hover::after,
+  .chip-card:focus::after {
+    transform: translateX(40%) skewX(-12deg);
+    opacity: 0.55;
+  }
+
+  .chip-card > * { position: relative; z-index: 3; }
+
+  .chip-card:focus-visible {
+    box-shadow: 0 12px 28px rgba(0,210,180,0.12), 0 0 0 4px rgba(0,216,180,0.06);
+  }
+
+  /* ---------- HEADINGS & LEFT SIDE ---------- */
+  .inside-heading {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    gap: 0.4rem;
+  }
+
+  .inside-heading .top,
+  .inside-heading .bottom {
+    font-size: clamp(1.9rem, 3vw, 2.4rem);
+    font-weight: 800;
+    color: white;
+  }
+
+  .inside-heading .middle {
+    font-size: clamp(2.6rem, 4vw, 4rem);
+    font-weight: 900;
+    background: linear-gradient(90deg,#00e7ff,#00dfb8,#4affad);
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    line-height: 0.9;
+  }
+
+  .inside-description {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.75);
+    font-weight: 400;
+    max-width: 48rem;
+  }
+
+  /* subtle list spacing adjustments */
+  .inside-list { gap: 0.6rem; }
+
+  /* reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .chip-card,
+    .chip-card::after,
+    .inside-border,
+    .inside-card {
+      transition: none !important;
+    }
+    .chip-card::after { opacity: 0.25; transform: none; }
+  }
+
+  /* responsive tweaks */
+  @media (max-width: 900px) {
+    .ambient-left-blob, .ambient-right-blob { display: none; }
+    .chip-card { padding: 0.3rem 0.6rem; font-size: 0.86rem; }
+    .inside-card { padding: 1rem; min-width: auto; }
+  }
+}
