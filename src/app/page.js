@@ -45,8 +45,13 @@ export default function Home() {
     </h2>
         <br/><br/><br/><br/><br/><br/><br/>
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-          <span className="text-white">Weekly{' '}</span>
-          <span className="font-semibold text-teal-400">Schedule</span>
+          <span className="text-white">Frequently Asked{' '}</span>
+          <span className="font-semibold text-teal-400">Questions</span>
+    </h2>
+        <br/><br/><br/><br/><br/><br/><br/>
+    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+          <span className="text-white">Footer{' '}</span>
+          <span className="font-semibold text-teal-400">Section</span>
     </h2>
   </>
   );}
