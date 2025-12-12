@@ -37,5 +37,16 @@ export default function Home() {
           <br/>
           <span className="font-semibold text-teal-400">Designed for Emerging Founders</span>
     </h2>
+        <br/><br/><br/><br/><br/><br/><br/>
+    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+          <span className="text-white">Program Certification</span>
+          <br/>
+          <span className="font-semibold text-teal-400">Marking Your Transition from Learner to Builder</span>
+    </h2>
+        <br/><br/><br/><br/><br/><br/><br/>
+    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+          <span className="text-white">Weekly{' '}</span>
+          <span className="font-semibold text-teal-400">Schedule</span>
+    </h2>
   </>
   );}
