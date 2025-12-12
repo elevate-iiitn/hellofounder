@@ -1,6 +1,7 @@
 import DarkVeil from '../components/darkveil';
 import { Header } from '../components/header-2';
 import Hero from '../components/hero';
+import Curriculum from "../components/curriculum";
 import Certificate from "../components/certificate";
 import FAQs from '../components/text-reveal-faqs.jsx';
 
@@ -116,7 +117,8 @@ export default function Home() {
           <br/>
           <span className="font-semibold text-teal-400">Designed for Emerging Founders</span>
     </h2>
-        <br/><br/><br/><br/><br/><br/><br/>
+    <Curriculum />
+        {/* <br/><br/><br/><br/><br/><br/><br/> */}
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Program Certification</span>
           <br/>
