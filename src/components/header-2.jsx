@@ -11,7 +11,7 @@ export function Header() {
 
 	const links = [
 		{
-			label: 'Features',
+			label: 'Curriculum',
 			href: '#',
 		},
 		{
@@ -19,7 +19,7 @@ export function Header() {
 			href: '#',
 		},
 		{
-			label: 'About',
+			label: 'FAQs',
 			href: '#',
 		},
 	];
@@ -44,7 +44,7 @@ export function Header() {
             className={cn(
                 'sticky top-0 z-50 mx-auto w-full max-w-5xl border-b border-transparent md:rounded-md md:border md:transition-all md:ease-out',
                 {
-					'bg-background/95 supports-[backdrop-filter]:bg-background/50 border-border backdrop-blur-lg md:top-4 md:max-w-4xl md:shadow':
+					'bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg md:top-4 md:max-w-4xl md:shadow':
 						scrolled && !open,
 					'bg-background/90': open,
 				}
