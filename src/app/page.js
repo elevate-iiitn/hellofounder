@@ -1,6 +1,7 @@
 import DarkVeil from '../components/darkveil';
 import { Header } from '../components/header-2';
 import Hero from '../components/hero';
+import FAQs from '../components/text-reveal-faqs.jsx';
 export default function Home() {
   return (
   <>
@@ -48,7 +49,8 @@ export default function Home() {
           <span className="text-white">Frequently Asked{' '}</span>
           <span className="font-semibold text-teal-400">Questions</span>
     </h2>
-        <br/><br/><br/><br/><br/><br/><br/>
+    <FAQs />
+        {/* <br/><br/><br/><br/><br/><br/><br/> */}
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Footer{' '}</span>
           <span className="font-semibold text-teal-400">Section</span>
