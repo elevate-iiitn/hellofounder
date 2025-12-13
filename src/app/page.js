@@ -30,8 +30,8 @@ export default function Home() {
     </h2>
     <br></br>
     <Skill/>
-        {/* <br/><br/><br/><br/><br/><br/><br/> */}
-   <div className="min-h-screen bg-black px-8 py-12 relative overflow-hidden">
+  
+   <div className="bg-black px-8 py-12 relative overflow-hidden">
       <div className="ambient-left-blob pointer-events-none" />
       <div className="ambient-right-blob pointer-events-none" />
 
@@ -111,7 +111,11 @@ export default function Home() {
         </div>
       </div>
     </div>
-
+    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+          <span className="text-white">Meet Our {' '} </span>
+          <span className="font-semibold text-teal-400">Mentors</span>
+    </h2>
+        <br/><br/><br/><br/><br/><br/><br/>
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Curriculum Overview</span>
           <br/>
