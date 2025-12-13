@@ -145,7 +145,7 @@ function SessionCard({ item, index }) {
           </div>
         </div>
 
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           {/* icon placeholder - replace paths with your SVGs in /public/icons */}
           {icon ? (
             <Image src={icon} alt="" width={36} height={36} className="object-contain" />

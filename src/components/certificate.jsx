@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 export default function Certificate() {
@@ -24,8 +24,8 @@ export default function Certificate() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="rounded-xl p-1 bg-gradient-to-br from-pink-500 via-purple-600 to-orange-400 shadow-xl">
-              <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 p-4 w-[420px] h-[300px] flex items-center justify-center">
+            <div className="rounded-xl p-1 bg-linear-to-br from-teal-300 via-teal-400 to-teal-500 shadow-xl">
+              <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 p-4 w-101 h-80 flex items-center justify-center">
                 <Image
                   src="/certificate-sample.png" // Replace with your actual certificate image
                   alt="Certificate Preview"
@@ -92,7 +92,7 @@ export default function Certificate() {
 
             {/* CTA */}
             <div className="pt-4">
-              <button className="px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 shadow-md flex items-center gap-2">
+              <button className="px-6 py-3 rounded-lg text-white font-medium bg-linear-to-r from-teal-600 to-teal-600 hover:from-teal-500 hover:to-teal-400 shadow-md flex items-center gap-2">
                 Claim Your Certificate
                 <svg
                   width="16"

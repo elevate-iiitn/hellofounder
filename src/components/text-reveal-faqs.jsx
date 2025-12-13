@@ -53,7 +53,7 @@ export default function FAQs() {
             </p>
             <p className="text-muted-foreground mt-6 hidden md:block">
               Can’t find what you’re looking for? Reach out to our{' '}
-              <Link href="#" className="text-primary text-teal-400 font-medium hover:underline">
+              <Link href="#" className=" text-teal-400 font-medium hover:underline">
                 HelloFounder support team
               </Link>{' '}
               for assistance.
@@ -122,7 +122,7 @@ export const BlurredStagger = ({
           variants={container}
           initial="hidden"
           animate="show"
-          className="text-base leading-relaxed break-words whitespace-normal">
+          className="text-base leading-relaxed wrap-break-words whitespace-normal">
           {headingText.split("").map((char, index) => (
             <motion.span
               key={index}

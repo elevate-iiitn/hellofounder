@@ -30,12 +30,12 @@ export default function Home() {
     </h2>
     <br></br>
     <Skill/>
-        <br/><br/><br/><br/><br/><br/><br/>
-   <div className="min-h-screen bg-black px-8 py-12 relative overflow-hidden">
+  
+   <div className="bg-black px-8 py-12 relative overflow-hidden">
       <div className="ambient-left-blob pointer-events-none" />
       <div className="ambient-right-blob pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-start md:items-stretch relative z-10">
+      <div className="max-w-6xl mx-auto pt-2.5 flex flex-col md:flex-row gap-10 items-start md:items-stretch relative z-10">
         {/* LEFT SIDE */}
         <div className="md:w-1/2 text-white">
           <div className="inside-heading">
@@ -111,7 +111,11 @@ export default function Home() {
         </div>
       </div>
     </div>
-
+    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+          <span className="text-white">Meet Our {' '} </span>
+          <span className="font-semibold text-teal-400">Mentors</span>
+    </h2>
+        <br/><br/><br/><br/><br/><br/><br/>
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Curriculum Overview</span>
           <br/>
