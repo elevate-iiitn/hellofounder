@@ -3,6 +3,7 @@ import { Header } from '../components/header-2';
 import Hero from '../components/hero';
 import Curriculum from "../components/curriculum";
 import Certificate from "../components/certificate";
+import ApplyCTA from "../components/apply-cta";
 import FAQs from '../components/text-reveal-faqs.jsx';
 import Footer from '../components/footer.jsx';
 import Skill from '../components/skills'
@@ -123,6 +124,7 @@ export default function Home() {
     </h2>
     <Curriculum />
         {/* <br/><br/><br/><br/><br/><br/><br/> */}
+    <ApplyCTA />
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Program Certification</span>
           <br/>
