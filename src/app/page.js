@@ -4,7 +4,7 @@ import Hero from '../components/hero';
 import Curriculum from "../components/curriculum";
 import Certificate from "../components/certificate";
 import FAQs from '../components/text-reveal-faqs.jsx';
-
+import Footer from '../components/footer.jsx';
 import Skill from '../components/skills'
 import SpotlightCard from '../components/SpotlightCard';
 
@@ -132,9 +132,10 @@ export default function Home() {
     </h2>
     <FAQs />
         {/* <br/><br/><br/><br/><br/><br/><br/> */}
-    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+    {/* <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Footer{' '}</span>
           <span className="font-semibold text-teal-400">Section</span>
-    </h2>
+    </h2> */}
+    <Footer />
   </>
   );}
