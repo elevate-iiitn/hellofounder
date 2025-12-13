@@ -51,20 +51,48 @@ export default function InfiniteTagMarquee() {
       <div ref={trackRef} className="marquee-inner-js" style={{ ["--marquee-duration"]: "18s" }}>
         {/* first copy (measured) */}
         <div className="marquee-first" ref={firstRef}>
-          {tags.map((t, i) => (
-            <div key={i} className="marquee-chip">
-              {t}
-            </div>
-          ))}
+          {tags.map((t, i) => {
+            const colorClasses = [
+              "bg-teal-400/10 text-teal-300 border border-teal-400/40",
+              "bg-cyan-400/10 text-cyan-300 border border-cyan-400/40",
+              "bg-violet-400/10 text-violet-300 border border-violet-400/40",
+              "bg-orange-400/10 text-orange-300 border border-orange-400/40",
+            ];
+
+            return (
+              <div
+                key={i}
+                className={`px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap
+                            transition-colors duration-300
+                            ${colorClasses[i % colorClasses.length]}`}
+              >
+                {t}
+              </div>
+            );
+          })}
         </div>
 
         {/* second copy (visual duplicate) */}
         <div className="marquee-second" aria-hidden="true">
-          {tags.map((t, i) => (
-            <div key={`copy-${i}`} className="marquee-chip">
-              {t}
-            </div>
-          ))}
+          {tags.map((t, i) => {
+            const colorClasses = [
+              "bg-teal-400/10 text-teal-300 border border-teal-400/40",
+              "bg-cyan-400/10 text-cyan-300 border border-cyan-400/40",
+              "bg-violet-400/10 text-violet-300 border border-violet-400/40",
+              "bg-orange-400/10 text-orange-300 border border-orange-400/40",
+            ];
+
+            return (
+              <div
+                key={`copy-${i}`}
+                className={`px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap
+                            transition-colors duration-300
+                            ${colorClasses[i % colorClasses.length]}`}
+              >
+                {t}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
