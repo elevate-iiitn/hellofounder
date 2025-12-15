@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { SparklesText } from "../components/ui/sparkles-text"
+
 
 export default function ApplyCTA() {
   return (
@@ -19,7 +21,7 @@ export default function ApplyCTA() {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
               Start Your <br />
-              <span className="font-extrabold">Founder Journey</span>
+              <SparklesText text="Founder Journey" colors={{ first: "#00E5FF", second: "#7CFFB2" }} sparklesCount={7} className="text-4xl md:text-5xl"/>
             </h2>
           </div>
 
