@@ -59,6 +59,14 @@
     height: 0;
     }
   }
+  @keyframes waves {
+  0% {
+    transform: translateY(-170px);
+    }
+  100% {
+    transform: translateY(0);
+    }
+  }
 }
 
 *,
@@ -202,7 +210,7 @@ html, body {
 
     flex: 0 0 auto; /* prevent shrinking */
   }
-  
+
 }
 @layer components {
   /* ---------- Ambient blobs (keeps page filled, optional) ---------- */
