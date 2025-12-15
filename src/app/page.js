@@ -33,7 +33,7 @@ export default function Home() {
 
     {/* Headline */}
     <h2 className="text-xl md:text-4xl font-semibold text-teal-400 mb-6">
-  Next cohort starts February 15, 2026
+  Founding cohort starts February 15, 2026
 </h2>
 <br></br>
 
