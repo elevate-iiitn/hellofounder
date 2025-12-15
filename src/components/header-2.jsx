@@ -14,15 +14,15 @@ export function Header() {
 	const links = [
 		{
 			label: 'Curriculum',
-			href: '#',
+			href: '#curriculum',
 		},
 		{
 			label: 'Pricing',
-			href: '#',
+			href: '#pricing',
 		},
 		{
 			label: 'FAQs',
-			href: '#',
+			href: '#faqs',
 		},
 	];
 

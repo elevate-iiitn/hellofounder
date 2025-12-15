@@ -156,7 +156,7 @@ export default function Home() {
               <MentorsSection />
 
 
-    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+    <h2 id="curriculum" className="scroll-mt-24 mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Curriculum Overview</span>
           <br/>
           <span className="font-semibold text-teal-400">Designed for Emerging Founders</span>
@@ -171,7 +171,7 @@ export default function Home() {
     </h2>
     <Certificate />
         {/* <br/><br/><br/><br/><br/><br/><br/> */}
-    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+    <h2 id="faqs" className="scroll-mt-24 mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Frequently Asked{' '}</span>
           <span className="font-semibold text-teal-400">Questions</span>
     </h2>
