@@ -8,7 +8,7 @@ const SparklesText = ({
   text,
   colors = { first: "#9E7AFF", second: "#FE8BBB" },
   className,
-  sparklesCount = 10,
+  sparklesCount = 5,
   ...props
 }) => {
   const [sparkles, setSparkles] = useState([]);
@@ -49,7 +49,7 @@ const SparklesText = ({
 
   return (
     <div
-      className={cn("text-6xl font-bold", className)}
+      className={cn("text-2xl font-bold", className)}
       {...props}
       style={
         {
@@ -78,7 +78,7 @@ const Sparkle = ({ id, x, y, color, delay, scale }) => {
         scale: [0, scale, 0],
         rotate: [75, 120, 150],
       }}
-      transition={{ duration: 0.8, repeat: Infinity, delay }}
+      transition={{ duration: 1, repeat: Infinity, delay }}
       width="21"
       height="21"
       viewBox="0 0 21 21">
