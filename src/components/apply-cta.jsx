@@ -6,7 +6,10 @@ import { SparklesText } from "../components/ui/sparkles-text"
 
 export default function ApplyCTA() {
   return (
-    <section id="pricing" className="scroll-mt-24 py-16 sm:py-20">
+<section
+  id="pricing"
+  className="hidden lg:block scroll-mt-24 py-16 sm:py-20"
+>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div className="relative flex flex-col md:flex-row overflow-hidden rounded-[28px] sm:rounded-[36px]">

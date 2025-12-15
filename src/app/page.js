@@ -11,7 +11,7 @@ import MentorsSection from "@/components/MentorsSection";
 import PixelCard from '../components/Cohort';
 import { Calendar, Users, Rocket } from "lucide-react";
 import InsideHelloFounder from '@/components/InsideHelloFounder';
-
+import PricingCard from "../components/PricingCard";
 
 
 export default function Home() {
@@ -85,6 +85,11 @@ export default function Home() {
     </h2>
     <Curriculum />
         {/* <br/><br/><br/><br/><br/><br/><br/> */}
+    <div className="flex justify-center items-center w-full py-12
+                lg:hidden">
+  <PricingCard />
+</div>
+
     <ApplyCTA />
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Program Certification</span>
