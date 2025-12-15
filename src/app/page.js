@@ -10,6 +10,10 @@ import Skill from '../components/skills'
 import SpotlightCard from '../components/SpotlightCard';
 import MentorsSection from "@/components/MentorsSection";
 import { SparklesText } from "../components/ui/sparkles-text"
+import PixelCard from '../components/Cohort';
+import { Laptop } from "lucide-react";
+import { Calendar, Users, Rocket } from "lucide-react";
+
 
 export default function Home() {
   return (
@@ -19,12 +23,43 @@ export default function Home() {
     </div>
     <Header />
     <Hero />
+<section className="px-6 md:px-20 my-20">
+    <PixelCard
+  variant="darkTeal"
+  className="w-full h-[260px] md:h-[320px] rounded-2xl bg-[#0b0b0c]"
+>
 
-    <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-          <span className="text-white">Founding Cohort starts{' '}</span>
-          <span className="font-semibold text-teal-400">February 15, 2026</span>
-    </h2>
-        <br/><br/><br/><br/><br/><br/><br/>
+  {/* Overlay content */}
+  <div className="absolute inset-0 z-10 flex flex-col justify-center px-10 md:px-16 text-left">
+
+    {/* Headline */}
+    <h2 className="text-xl md:text-4xl font-semibold text-teal-400 mb-6">
+  Next cohort starts December 10, 2025
+</h2>
+<br></br>
+
+<div className="space-y-4 text-gray-300">
+
+  <div className="flex items-center gap-3">
+    <Calendar size={18} className="text-teal-400" />
+    <span>45 Days on-campus program</span>
+  </div>
+
+  <div className="flex items-center gap-3">
+    <Users size={18} className="text-orange-400" />
+    <span>Limited to 25 founders</span>
+  </div>
+
+  <div className="flex items-center gap-3">
+    <Rocket size={18} className="text-teal-400" />
+    <span>Access to Pitch Day</span>
+  </div>
+
+</div>
+  </div>
+</PixelCard>
+</section>
+        <br/><br/><br/>
 
     <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
           <span className="text-white">Learn all the relevant skills to be </span>
