@@ -60,6 +60,7 @@ export function Header() {
 						'md:px-2': scrolled,
 					}
                 )}>
+					<a href="#hero" aria-label="Scroll to top">
 				<Image
   src="/images/logo-no-bg.png"
   alt="HelloFounder Logo"
@@ -67,7 +68,7 @@ export function Header() {
   height={40}
   className="h-10 w-auto md:h-12"
   priority
-/>
+/></a>
 
 				<div className="hidden items-center gap-2 md:flex">
 					{links.map((link, i) => (
