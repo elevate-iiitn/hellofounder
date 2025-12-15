@@ -21,7 +21,7 @@ export default function Home() {
             <DarkVeil />
     </div>
     <Header />
-    <Hero />
+    <section id="hero"><Hero /></section>
 <section className="px-6 md:px-20 my-20">
     <PixelCard
   variant="darkTeal"
