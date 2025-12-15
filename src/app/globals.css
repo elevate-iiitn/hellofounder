@@ -161,7 +161,9 @@ html, body {
     100% { transform: translateX(calc(-1 * var(--marquee-width))); }
   }
 
-  .marquee-outer { @apply overflow-hidden w-full; }
+  .marquee-outer {
+    @apply overflow-hidden w-full;
+  }
 
   .marquee-inner-js {
     display: flex; /* two blocks side-by-side */
@@ -174,17 +176,28 @@ html, body {
     animation-play-state: paused;
   }
 
+  /* 👇 KEY CHANGE HERE */
   .marquee-first,
   .marquee-second {
     @apply inline-flex items-center whitespace-nowrap;
+
+    /* Responsive spacing between tags */
+    gap: clamp(0.6rem, 2.5vw, 1.25rem);
   }
 
+  /* Chip styling (NO spacing here) */
   .marquee-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full
-      bg-card text-card-foreground border border-border
-      shadow-sm font-medium text-sm;
-    flex: 0 0 auto;       /* prevent shrinking */
-    margin-right: 0.5rem; /* spacing between chips (use margin, not gap) */
+    @apply inline-flex items-center
+      px-4 sm:px-5
+      py-1.5 sm:py-2
+      rounded-full
+      bg-card text-card-foreground
+      border border-border
+      shadow-sm
+      font-medium
+      text-xs sm:text-sm;
+
+    flex: 0 0 auto; /* prevent shrinking */
   }
   
 }
