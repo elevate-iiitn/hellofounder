@@ -12,26 +12,25 @@ export default function Certificate() {
   ];
 
   return (
-    <section className="py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <section className="py-14 sm:py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 
           {/* LEFT — Certificate Preview */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="rounded-xl p-1 bg-linear-to-br from-teal-300 via-teal-400 to-teal-500 shadow-xl">
-              <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 p-4 w-101 h-80 flex items-center justify-center">
+            <div className="rounded-xl p-[2px] bg-gradient-to-br from-teal-300 via-teal-400 to-teal-500 shadow-xl w-full max-w-md">
+              <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 p-4 aspect-[4/3] flex items-center justify-center">
                 <Image
-                  src="/certificate-sample.png" // Replace with your actual certificate image
+                  src="/certificate-sample.png"
                   alt="Certificate Preview"
-                  width={380}
-                  height={260}
-                  className="object-contain"
+                  fill
+                  className="object-contain p-2"
                 />
               </div>
             </div>
@@ -39,67 +38,64 @@ export default function Certificate() {
 
           {/* RIGHT — Certificate Details */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
             <div>
-              <h3 className="text-xl md:text-2xl font-semibold text-white">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
                 Certificate of Excellence
               </h3>
-              <p className="text-teal-300 mt-1 text-sm md:text-base">
+              <p className="text-teal-300 mt-1 text-sm sm:text-base">
                 Distinguished Achievement Recognition
               </p>
             </div>
 
             {/* Bullet Points */}
-            <ul className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
               {certificatePoints.map((point, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span>
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="mt-1"
-                    >
-                      <circle cx="12" cy="12" r="9" stroke="#34d399" strokeWidth="1.5" />
-                      <path
-                        d="M8.5 12.5l2 2 4-5"
-                        stroke="#10b981"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="mt-1 shrink-0"
+                  >
+                    <circle cx="12" cy="12" r="9" stroke="#34d399" strokeWidth="1.5" />
+                    <path
+                      d="M8.5 12.5l2 2 4-5"
+                      stroke="#10b981"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+
                   <BlurFade text={point} />
                 </li>
               ))}
             </ul>
 
             {/* Highlight Box */}
-            <div className="mt-4 rounded-md bg-amber-50/20 border border-amber-200/30 p-4">
-              <p className="text-sm md:text-base text-amber-200">
-                <strong>Your Gateway to Success —</strong>  
+            <div className="rounded-md bg-amber-50/20 border border-amber-200/30 p-4">
+              <p className="text-sm sm:text-base text-amber-200 leading-relaxed">
+                <strong>Your Gateway to Success —</strong>{" "}
                 Joining HelloFounder means joining a community of top young founders.
                 This official certificate opens doors to India’s most impactful startup circles.
               </p>
             </div>
 
             {/* CTA */}
-            <div className="pt-4">
-              <button className="px-6 py-3 rounded-lg text-white font-medium bg-linear-to-r from-teal-600 to-teal-600 hover:from-teal-500 hover:to-teal-400 shadow-md flex items-center gap-2">
+            <div className="pt-2">
+              <button className="w-full sm:w-auto px-6 py-3 rounded-lg text-white font-medium
+                                 bg-gradient-to-r from-teal-600 to-teal-600
+                                 hover:from-teal-500 hover:to-teal-400
+                                 shadow-md flex items-center justify-center gap-2">
                 Claim Your Certificate
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
+                {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M5 12h14M12 5l7 7-7 7"
                     stroke="currentColor"
@@ -107,7 +103,7 @@ export default function Certificate() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                </svg>
+                </svg> */}
               </button>
             </div>
           </motion.div>
@@ -118,21 +114,20 @@ export default function Certificate() {
   );
 }
 
-
 /* ---------------------------------------------
-   Animated Text Reveal (Matches FAQ’s Animation)
+   Optimized Animated Text Reveal
 ---------------------------------------------- */
 export const BlurFade = ({ text }) => {
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.015 },
+      transition: { staggerChildren: 0.012 },
     },
   };
 
   const letterAnim = {
-    hidden: { opacity: 0, filter: "blur(8px)" },
+    hidden: { opacity: 0, filter: "blur(6px)" },
     show: { opacity: 1, filter: "blur(0px)" },
   };
 
@@ -140,14 +135,15 @@ export const BlurFade = ({ text }) => {
     <motion.p
       variants={container}
       initial="hidden"
-      animate="show"
-      className="text-sm md:text-base text-gray-300"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="text-sm sm:text-base text-gray-300 leading-relaxed"
     >
       {text.split("").map((char, i) => (
         <motion.span
           key={i}
           variants={letterAnim}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.22 }}
           className="inline-block"
         >
           {char === " " ? "\u00A0" : char}

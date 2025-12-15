@@ -8,52 +8,51 @@ export default function Footer() {
     <footer className="bg-gradient-to-b from-[#060606] to-[#0f2f2b]">
 
       {/* TOP BAR */}
-      <div className="max-w-7xl mx-auto px-24 pt-8 py-8">
-        <div className="flex items-center justify-between text-[20px] text-white/70">
-          <div className="flex gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-0 sm:items-center sm:justify-between text-white/70 text-base sm:text-lg">
+
+          {/* LINKS */}
+          <div className="flex gap-6 sm:gap-10">
             <Link href="#curriculum" className="hover:text-white">
               Curriculum
             </Link>
             <Link href="#faqs" className="hover:text-white">
-              FAQ's
+              FAQ&apos;s
             </Link>
           </div>
 
+          {/* EMAIL */}
           <a
             href="mailto:hellofounder@gmail.com"
-            className="text-white text-[36px] font-sm"
+            className="text-white font-medium text-lg sm:text-2xl lg:text-3xl break-all"
           >
             hellofounder@gmail.com
           </a>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-20">
+      {/* DIVIDER */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="h-px bg-white/20" />
-      </div>  
+      </div>
 
-      {/* MAIN LARGE BAND */}
-      <div className="mt-8 ">
-        <div className="max-w-7xl mx-auto px-12 py-10 flex items-center justify-between">
+      {/* MAIN BAND */}
+      <div className="mt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-between">
 
-          {/* LEFT: BIG HELLOFOUNDER LOGO */}
-          <div className="flex items-center">
-            <div className="relative w-[300px] h-[200px]">
-              <Image
-                src="/images/logo-no-bg.png"
-                alt="HelloFounder"
-                fill
-                className="object-contain"
-              />
-            </div>
+          {/* LOGO */}
+          <div className="relative w-[180px] h-[120px] sm:w-[220px] sm:h-[150px] lg:w-[300px] lg:h-[200px]">
+            <Image
+              src="/images/logo-no-bg.png"
+              alt="HelloFounder"
+              fill
+              className="object-contain"
+            />
           </div>
 
-          {/* CENTER: INTENTIONALLY EMPTY (MATCHES REFERENCE) */}
-          <div className="flex-1" />
-
-          {/* RIGHT: APPLY CTA */}
-          <div className="flex items-center gap-6 mr-4">
-            <span className="text-base text-white/60 text-[18px]">
+          {/* CTA */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            <span className="text-white/60 text-sm sm:text-lg">
               Apply to cohort
             </span>
 
@@ -61,17 +60,15 @@ export default function Footer() {
               href="https://your-typeform-or-googleform-link.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-30 h-30 rounded-[28px]
+              className="group w-16 h-16 sm:w-20 sm:h-20 rounded-2xl
                         bg-gradient-to-br from-teal-400 to-cyan-400
                         flex items-center justify-center
                         transition-transform duration-300 hover:scale-105"
             >
               <svg
-                width="100"
-                height="100"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="transition-transform duration-800 ease-in-out group-hover:rotate-90"
+                className="w-8 h-8 sm:w-10 sm:h-10 transition-transform duration-700 group-hover:rotate-90"
               >
                 <path
                   d="M10 14a3.5 3.5 0 0 1 0-4.95l2-2a3.5 3.5 0 0 1 4.95 4.95l-1 1"
@@ -90,9 +87,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* BOTTOM SPACE (LIKE REFERENCE FADE OUT) */}
-      {/* <div className="h-16 bg-[#060606]" /> */}
     </footer>
   );
 }
