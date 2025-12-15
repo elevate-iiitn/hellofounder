@@ -149,6 +149,9 @@ html, body {
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 
 }
 /* Duplicate the content visually seamless by shifting -50% (we duplicate the list) */
