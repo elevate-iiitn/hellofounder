@@ -43,14 +43,16 @@ export function Header() {
 
 	return (
         <header
-            className={cn(
-                'sticky top-0 z-50 mx-auto w-full max-w-5xl border-b border-transparent md:rounded-md md:border md:transition-all md:ease-out',
-				{
-					'bg-background/95 supports-backdrop-filter:bg-background/50 backdrop-blur-lg md:top-4 md:max-w-4xl md:shadow':
-						scrolled && !open,
-					'bg-background/90': open,
-				}
-            )}>
+  className={cn(
+    'fixed top-0 left-0 right-0 z-50 mx-auto w-full max-w-5xl border-b border-transparent md:rounded-md md:border md:transition-all md:ease-out',
+    {
+      'bg-background/95 supports-backdrop-filter:bg-background/50 backdrop-blur-lg md:top-4 md:max-w-4xl md:shadow':
+        scrolled && !open,
+      'bg-background/90': open,
+    }
+  )}
+>
+
             <nav
                 className={cn(
                     'flex h-14 w-full pt-2 pb-2 items-center justify-between px-4 md:h-12 md:transition-all md:ease-out',

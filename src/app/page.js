@@ -11,7 +11,6 @@ import SpotlightCard from '../components/SpotlightCard';
 import MentorsSection from "@/components/MentorsSection";
 import { SparklesText } from "../components/ui/sparkles-text"
 import PixelCard from '../components/Cohort';
-import { Laptop } from "lucide-react";
 import { Calendar, Users, Rocket } from "lucide-react";
 
 
