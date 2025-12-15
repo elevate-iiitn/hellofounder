@@ -25,7 +25,7 @@ export default function Certificate() {
             className="flex justify-center"
           >
             <div className="rounded-xl p-[2px] bg-gradient-to-br from-teal-300 via-teal-400 to-teal-500 shadow-xl w-full max-w-md">
-              <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 p-4 aspect-[4/3] flex items-center justify-center">
+              <div className="relative bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 p-4 aspect-[4/3] flex items-center justify-center">
                 <Image
                   src="/certificate-sample.png"
                   alt="Certificate Preview"
