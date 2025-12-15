@@ -9,6 +9,7 @@ import Footer from '../components/footer.jsx';
 import Skill from '../components/skills'
 import SpotlightCard from '../components/SpotlightCard';
 import MentorsSection from "@/components/MentorsSection";
+import { SparklesText } from "../components/ui/sparkles-text"
 
 export default function Home() {
   return (
@@ -62,7 +63,7 @@ export default function Home() {
         {/* RIGHT SIDE card */}
         <div className="md:w-1/2 w-full">
           <SpotlightCard>
-            <h3 className="inside-title">Who's this for?</h3>
+            <SparklesText text="Who's this for?" />
 
             <p className="inside-subtext">
               For professionals and startup enthusiasts who want to work directly with founders…
