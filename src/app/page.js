@@ -34,7 +34,7 @@ export default function Home() {
 
     {/* Headline */}
     <h2 className="text-xl md:text-4xl font-semibold text-teal-400 mb-6">
-  Next cohort starts December 10, 2025
+  Next cohort starts February 15, 2026
 </h2>
 <br></br>
 
@@ -42,7 +42,7 @@ export default function Home() {
 
   <div className="flex items-center gap-3">
     <Calendar size={18} className="text-teal-400" />
-    <span>45 Days on-campus program</span>
+    <span>45 Days Online Cohort</span>
   </div>
 
   <div className="flex items-center gap-3">
