@@ -45,7 +45,7 @@ export default function ApplyCTA() {
 
             <div className="relative z-10 p-8 sm:p-10 text-center">
               <p className="text-gray-700 text-sm sm:text-base mb-3">
-                Get exclusive access to the Founding Cohort at just
+                Get exclusive access to the <span className="text-teal-400 italic font-semibold">Founding Cohort</span> at just
               </p>
 
               <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6">
