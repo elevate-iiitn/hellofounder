@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+
 import { Calendar, Users, Rocket } from "lucide-react";
 import ReadOnlyRangeCalendar from "@/components/ReadOnlyRangeCalendar";
 import CalendarModal from "@/components/CalendarModal";
@@ -11,6 +12,7 @@ const FROM = new Date(2026, 1, 15); // Feb 15, 2026
 const TO   = new Date(2026, 2, 31); // Mar 31, 2026
 
 /* ================= PIXEL ENGINE ================= */
+
 
 class Pixel {
   constructor(ctx, x, y, color, speed, delay) {

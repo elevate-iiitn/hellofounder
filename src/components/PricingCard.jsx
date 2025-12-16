@@ -57,8 +57,7 @@ export default function PricingCard({
             md:text-3xl
           "
         >
-          {title}{" "}
-          <span className="text-teal-400 italic">{highlight}</span>
+          {title} <span className="text-teal-400 italic">{highlight}</span>
         </h3>
 
         {/* description */}

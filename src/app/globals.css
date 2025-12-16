@@ -59,6 +59,14 @@
     height: 0;
     }
   }
+  @keyframes waves {
+  0% {
+    transform: translateY(-170px);
+    }
+  100% {
+    transform: translateY(0);
+    }
+  }
 }
 
 *,
@@ -202,7 +210,7 @@ html, body {
 
     flex: 0 0 auto; /* prevent shrinking */
   }
-  
+
 }
 @layer components {
   /* ---------- Ambient blobs (keeps page filled, optional) ---------- */
@@ -474,5 +482,6 @@ html, body {
     .chip-card { padding: 0.3rem 0.6rem; font-size: 0.86rem; }
     .inside-card { padding: 1rem; min-width: auto; }
   }
-  
+
 }
+
