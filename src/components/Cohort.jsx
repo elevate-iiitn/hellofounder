@@ -1,272 +1,231 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Calendar, Users, Rocket } from "lucide-react";
+import ReadOnlyRangeCalendar from "@/components/ReadOnlyRangeCalendar";
+import CalendarModal from "@/components/CalendarModal";
 
-/* ---------------- Pixel Class ---------------- */
+/* ================= CONFIG ================= */
+
+const FROM = new Date(2026, 1, 15); // Feb 15, 2026
+const TO   = new Date(2026, 2, 31); // Mar 31, 2026
+
+/* ================= PIXEL ENGINE ================= */
 
 class Pixel {
-  constructor(canvas, context, x, y, color, speed, delay) {
-    this.width = canvas.width;
-    this.height = canvas.height;
-    this.ctx = context;
+  constructor(ctx, x, y, color, speed, delay) {
+    this.ctx = ctx;
     this.x = x;
     this.y = y;
     this.color = color;
-    this.speed = this.getRandomValue(0.1, 0.9) * speed;
+
     this.size = 0;
-    this.sizeStep = Math.random() * 0.4;
-    this.minSize = 0.5;
-    this.maxSizeInteger = 2;
-    this.maxSize = this.getRandomValue(this.minSize, this.maxSizeInteger);
+    this.min = 0;
+    this.max = Math.random() * 1.6 + 0.6;
+
+    this.speed = speed;
     this.delay = delay;
     this.counter = 0;
-    this.counterStep = Math.random() * 4 + (this.width + this.height) * 0.01;
-    this.isIdle = false;
-    this.isReverse = false;
-    this.isShimmer = false;
-  }
 
-  getRandomValue(min, max) {
-    return Math.random() * (max - min) + min;
+    this.idle = true;
   }
 
   draw() {
-    const centerOffset = this.maxSizeInteger * 0.5 - this.size * 0.5;
+    if (this.size <= 0) return;
     this.ctx.fillStyle = this.color;
-    this.ctx.fillRect(
-      this.x + centerOffset,
-      this.y + centerOffset,
-      this.size,
-      this.size
-    );
+    this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
 
   appear() {
-    this.isIdle = false;
-    if (this.counter <= this.delay) {
-      this.counter += this.counterStep;
+    this.idle = false;
+
+    if (this.counter < this.delay) {
+      this.counter++;
       return;
     }
-    if (this.size >= this.maxSize) {
-      this.isShimmer = true;
-    }
-    if (this.isShimmer) {
-      this.shimmer();
+
+    if (this.size < this.max) {
+      this.size += this.speed;
     } else {
-      this.size += this.sizeStep;
+      this.idle = true;
     }
+
     this.draw();
   }
 
   disappear() {
-    this.isShimmer = false;
     this.counter = 0;
-    if (this.size <= 0) {
-      this.isIdle = true;
-      return;
+
+    if (this.size > 0) {
+      this.size -= this.speed;
+      if (this.size < 0) this.size = 0;
+      this.draw();
+      this.idle = false;
     } else {
-      this.size -= 0.1;
+      this.idle = true;
     }
-    this.draw();
-  }
-
-  shimmer() {
-    if (this.size >= this.maxSize) {
-      this.isReverse = true;
-    } else if (this.size <= this.minSize) {
-      this.isReverse = false;
-    }
-    this.size += this.isReverse ? -this.speed : this.speed;
   }
 }
 
-/* ---------------- Helpers ---------------- */
+/* ================= COMPONENT ================= */
 
-function getEffectiveSpeed(value, reducedMotion) {
-  const throttle = 0.001;
-  const parsed = parseInt(value, 10);
-  if (parsed <= 0 || reducedMotion) return 0;
-  return parsed * throttle;
-}
-
-/* ---------------- Variants ---------------- */
-
-const VARIANTS = {
-  default: {
-    activeColor: null,
-    gap: 5,
-    speed: 35,
-    colors: "#f8fafc,#f1f5f9,#cbd5e1",
-    noFocus: false,
-  },
-
-  darkTeal: {
-    activeColor: "#00dfc4",
-    gap: 7,
-    speed: 28,
-    colors: "#0f172a,#111827,#00dfc4,#00e7ff",
-    noFocus: true,
-  },
-
-  blue: {
-    activeColor: "#e0f2fe",
-    gap: 10,
-    speed: 25,
-    colors: "#e0f2fe,#7dd3fc,#0ea5e9",
-    noFocus: false,
-  },
-
-  pink: {
-    activeColor: "#fecdd3",
-    gap: 6,
-    speed: 80,
-    colors: "#fecdd3,#fda4af,#e11d48",
-    noFocus: true,
-  },
-};
-
-/* ---------------- Component ---------------- */
-
-export default function PixelCard({
-  variant = "default",
-  gap,
-  speed,
-  colors,
-  noFocus,
-  className = "",
-  children,
-}) {
+export default function Cohort() {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const pixelsRef = useRef([]);
-  const animationRef = useRef(null);
-  const timePreviousRef = useRef(0);
+  const rafRef = useRef(null);
 
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const variantCfg = VARIANTS[variant] || VARIANTS.default;
-  const finalGap = gap ?? variantCfg.gap;
-  const finalSpeed = speed ?? variantCfg.speed;
-  const finalColors = colors ?? variantCfg.colors;
-  const finalNoFocus = noFocus ?? variantCfg.noFocus;
-
-  /* ---------- Client-only init ---------- */
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    timePreviousRef.current = performance.now();
-
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-
-    const handler = () => setReducedMotion(mq.matches);
-    mq.addEventListener("change", handler);
-
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  /* ---------- Pixel Init ---------- */
+  /* ---------- INIT PIXELS ---------- */
   const initPixels = () => {
     if (!containerRef.current || !canvasRef.current) return;
 
-    const rect = containerRef.current.getBoundingClientRect();
-    const width = Math.floor(rect.width);
-    const height = Math.floor(rect.height);
+    const { width, height } = containerRef.current.getBoundingClientRect();
     const ctx = canvasRef.current.getContext("2d");
 
     canvasRef.current.width = width;
     canvasRef.current.height = height;
 
-    const colorsArray = finalColors.split(",");
-    const pxs = [];
+    const colors = ["#00dfc4", "#00e7ff", "#0f172a"];
+    const gap = 10;
+    const speed = 0.15;
 
-    for (let x = 0; x < width; x += finalGap) {
-      for (let y = 0; y < height; y += finalGap) {
-        const color =
-          colorsArray[Math.floor(Math.random() * colorsArray.length)];
+    const pixels = [];
+
+    for (let x = 0; x < width; x += gap) {
+      for (let y = 0; y < height; y += gap) {
         const dx = x - width / 2;
         const dy = y - height / 2;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const delay = reducedMotion ? 0 : distance;
+        const delay = Math.sqrt(dx * dx + dy * dy) * 0.15;
 
-        pxs.push(
+        pixels.push(
           new Pixel(
-            canvasRef.current,
             ctx,
             x,
             y,
-            color,
-            getEffectiveSpeed(finalSpeed, reducedMotion),
+            colors[Math.floor(Math.random() * colors.length)],
+            speed,
             delay
           )
         );
       }
     }
-    pixelsRef.current = pxs;
+
+    pixelsRef.current = pixels;
   };
 
-  /* ---------- Animation Loop ---------- */
-  const doAnimate = (fnName) => {
-    animationRef.current = requestAnimationFrame(() => doAnimate(fnName));
-    const timeNow = performance.now();
-    const timePassed = timeNow - timePreviousRef.current;
-    const frameInterval = 1000 / 60;
+  /* ---------- ANIMATION LOOP ---------- */
+  const animate = (mode) => {
+    cancelAnimationFrame(rafRef.current);
 
-    if (timePassed < frameInterval) return;
-    timePreviousRef.current = timeNow - (timePassed % frameInterval);
-
-    const ctx = canvasRef.current?.getContext("2d");
-    if (!ctx || !canvasRef.current) return;
-
-    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-
-    let allIdle = true;
-    for (const pixel of pixelsRef.current) {
-      pixel[fnName]();
-      if (!pixel.isIdle) allIdle = false;
+    // reset state before every animation
+    for (const p of pixelsRef.current) {
+      p.counter = 0;
+      p.idle = false;
     }
 
-    if (allIdle) cancelAnimationFrame(animationRef.current);
+    const frame = () => {
+      const ctx = canvasRef.current.getContext("2d");
+      ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+      let allIdle = true;
+
+      for (const p of pixelsRef.current) {
+        p[mode]();
+        if (!p.idle) allIdle = false;
+      }
+
+      if (!allIdle) {
+        rafRef.current = requestAnimationFrame(frame);
+      } else {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(frame);
   };
 
-  const handleAnimation = (name) => {
-    cancelAnimationFrame(animationRef.current);
-    animationRef.current = requestAnimationFrame(() => doAnimate(name));
-  };
-
-  /* ---------- Events ---------- */
-  const onMouseEnter = () => handleAnimation("appear");
-  const onMouseLeave = () => handleAnimation("disappear");
-  const onFocus = () => handleAnimation("appear");
-  const onBlur = () => handleAnimation("disappear");
-
-  /* ---------- Resize ---------- */
+  /* ---------- LIFECYCLE ---------- */
   useEffect(() => {
     initPixels();
-    const observer = new ResizeObserver(initPixels);
-    containerRef.current && observer.observe(containerRef.current);
+    const ro = new ResizeObserver(initPixels);
+    ro.observe(containerRef.current);
 
     return () => {
-      observer.disconnect();
-      cancelAnimationFrame(animationRef.current);
+      ro.disconnect();
+      cancelAnimationFrame(rafRef.current);
     };
-  }, [finalGap, finalSpeed, finalColors, reducedMotion]);
+  }, []);
 
-  /* ---------- Render ---------- */
+  /* ================= RENDER ================= */
+
   return (
-    <div
-      ref={containerRef}
-      className={`relative overflow-hidden grid place-items-center aspect-[4/5]
-        rounded-[25px] border border-[#27272a] isolate transition-colors
-        select-none h-[400px] w-[300px] ${className}`}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onFocus={finalNoFocus ? undefined : onFocus}
-      onBlur={finalNoFocus ? undefined : onBlur}
-      tabIndex={finalNoFocus ? -1 : 0}
-    >
-      <canvas ref={canvasRef} className="absolute inset-0" />
-      {children}
-    </div>
+    <section className="px-4 md:px-20 my-20">
+      <div
+        ref={containerRef}
+        onMouseEnter={() => animate("appear")}
+        onMouseLeave={() => animate("disappear")}
+        className="
+          relative isolate overflow-hidden rounded-3xl
+          border border-white/10 bg-[#0b0b0c]
+          p-6 md:p-10
+        "
+      >
+        {/* CANVAS */}
+        <canvas ref={canvasRef} className="absolute inset-0" />
+
+        {/* CONTENT */}
+        <div className="relative z-10 flex flex-col lg:flex-row gap-10">
+          {/* LEFT */}
+          <div className="flex-1">
+            <h2 className="text-3xl md:text-5xl font-semibold text-teal-400">
+              Founding cohort starts February 15, 2026
+            </h2>
+
+            <div className="mt-8 space-y-4 text-gray-300">
+              <div className="flex items-center gap-3">
+                <Calendar size={18} className="text-teal-400" />
+                <span>45 Days Online Cohort</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Users size={18} className="text-orange-400" />
+                <span>Limited to 25 founders</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Rocket size={18} className="text-teal-400" />
+                <span>Access to Pitch Day</span>
+              </div>
+            </div>
+
+            {/* MOBILE BUTTON */}
+            <button
+              onClick={() => setShowModal(true)}
+              className="mt-6 inline-flex lg:hidden rounded-lg
+                         bg-teal-500 px-4 py-2 text-sm
+                         font-semibold text-black"
+            >
+              View Schedule
+            </button>
+          </div>
+
+          {/* RIGHT — DESKTOP ONLY */}
+          <div className="hidden lg:block shrink-0">
+            <ReadOnlyRangeCalendar from={FROM} to={TO} />
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE MODAL */}
+      <CalendarModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        from={FROM}
+        to={TO}
+      />
+    </section>
   );
 }
