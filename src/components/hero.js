@@ -85,7 +85,7 @@ const Hero = () => {
 
           {/* Subheading */}
           <p
-            className="mb-12 text-left font-light leading-tight text-white
+            className="mb-12 text-center font-light leading-tight text-white
             text-[12px] sm:text-[14px] md:text-[16px]"
           >
             Get ready to <span className="text-teal-400">start building</span>
