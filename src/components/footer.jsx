@@ -23,10 +23,10 @@ export default function Footer() {
 
           {/* EMAIL */}
           <a
-            href="mailto:hellofounder@gmail.com"
+            href="mailto:krishna@indianschooloffounders.com"
             className="text-white font-medium text-lg sm:text-2xl lg:text-3xl break-all"
           >
-            hellofounder@gmail.com
+            krishna@indianschooloffounders.com
           </a>
         </div>
       </div>
