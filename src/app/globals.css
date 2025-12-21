@@ -449,13 +449,18 @@ html, body {
     font-weight: 900;
     color: #ffffff;          /* white text */
     line-height: 0.9;
-    white-space: nowrap;
+    
   
     /* remove gradient behavior */
     background: none;
     -webkit-background-clip: initial;
     -webkit-text-fill-color: initial;
   }
+@media (min-width: 768px) {
+  .inside-heading .middle {
+    white-space: nowrap;
+  }
+}
 
   .inside-description {
     font-size: 1rem;
