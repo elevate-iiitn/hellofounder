@@ -1,5 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -85,7 +83,6 @@ html, body {
 
 :root {
   --radius: 0.625rem;
-  --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --background: oklch(0% 0 0);
   --foreground: oklch(94.611% 0.00011 271.152);
   --card: oklch(1 0 0);
@@ -159,7 +156,6 @@ html, body {
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans);
   }
   html {
     scroll-behavior: smooth;
@@ -443,16 +439,17 @@ html, body {
 
   .inside-heading .top,
   .inside-heading .bottom {
-    font-size: clamp(1.9rem, 3vw, 2.4rem);
+     font-size: clamp(2rem, 2.5vw, 3rem);
     font-weight: 800;
     color: white;
   }
 
   .inside-heading .middle {
-    font-size: clamp(2.6rem, 4vw, 4rem);
+    font-size: clamp(2rem, 3vw, 3.1rem);
     font-weight: 900;
     color: #ffffff;          /* white text */
     line-height: 0.9;
+    white-space: nowrap;
   
     /* remove gradient behavior */
     background: none;

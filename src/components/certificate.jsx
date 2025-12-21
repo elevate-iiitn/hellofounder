@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Certificate() {
   const certificatePoints = [
-    "Exclusive HelloFounder Alumni Excellence Certificate",
+    "Exclusive ISF Alumni Excellence Certificate",
     "Lifetime access to our elite founder network & mentorship circle",
     "Premium LinkedIn-shareable certificate format",
     "Recognized by leading founders, VCs, and accelerators",
@@ -87,7 +87,7 @@ export default function Certificate() {
             {/* Highlight Box */}
             <div className="rounded-md bg-amber-50/20 border border-amber-200/30 p-4">
               <p className="text-sm sm:text-base text-amber-200 leading-relaxed">
-                <strong>Your Gateway to Success —</strong> Joining HelloFounder
+                <strong>Your Gateway to Success —</strong> Joining ISF
                 means joining a community of top young founders. This official
                 certificate opens doors to India’s most impactful startup
                 circles.

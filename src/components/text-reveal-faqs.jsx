@@ -17,7 +17,7 @@ export default function FAQs() {
     id: 'item-2',
     question: 'What is the duration of the program?',
     answer:
-      'HelloFounder is a 6-week (45-day) intensive program. You’ll attend 18+ live sessions, complete weekly assignments, and learn to build with the support of mentors and the community.',
+      'ISF is a 6-week (45-day) intensive program. You’ll attend 18+ live sessions, complete weekly assignments, and learn to build with the support of mentors and the community.',
   },
   {
     id: 'item-3',
@@ -49,12 +49,12 @@ export default function FAQs() {
         <div className="grid gap-8 md:grid-cols-5 md:gap-12">
           <div className="md:col-span-2">
             <p className="text-muted-foreground mt-4 text-balance text-lg">
-              Everything you need to know about HelloFounder
+              Everything you need to know about ISF
             </p>
             <p className="text-muted-foreground mt-6 hidden md:block">
               Can’t find what you’re looking for? Reach out to our{' '}
               <Link href="#" className=" text-teal-400 font-medium hover:underline">
-                HelloFounder support team
+                ISF support team
               </Link>{' '}
               for assistance.
             </p>

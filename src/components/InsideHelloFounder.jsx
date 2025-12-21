@@ -14,12 +14,12 @@ export default function InsideHelloFounder() {
         <div className="md:w-1/2 text-white">
           <div className="inside-heading">
             <span className="top">Inside</span>
-            <span className="middle shimmer">HelloFounder</span>
+            <span className="middle shimmer">Indian School of Founders</span>
             <span className="bottom">Program</span>
           </div>
 
           <p className="inside-description mt-8 max-w-xl">
-            The HelloFounder Program is designed for ambitious builders and emerging founders
+            The Indian School of Founders Program is designed for ambitious builders and emerging founders
             who want to accelerate their journey into startups. Whether you're exploring ideas,
             validating early concepts, or preparing to operate inside a high-pace founder’s office —
             this program gives you the skills, mindset, and structure to level up fast.
