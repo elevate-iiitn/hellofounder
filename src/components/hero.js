@@ -3,6 +3,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "./mbutton";
+import { koulen } from "@/lib/fonts";
+
+
 
 const Hero = () => {
   return (
@@ -10,7 +13,7 @@ const Hero = () => {
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
         <div className="max-w-6xl text-center">
           {/* Main Headline */}
-          <h1 className="relative mb-8 text-5xl font-light leading-none tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className={`${koulen.className} relative mb-8 text-5xl leading-none tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl`}>
             The only <span className="font-light text-teal-400">B-School</span>
             <br />
             for founders,
@@ -21,7 +24,7 @@ const Hero = () => {
               {/* Pen-driven strike-through */}
               <motion.svg
                 viewBox="0 0 340 50"
-                className="pointer-events-none absolute left-0 top-[60%] w-full -translate-y-1/2"
+                className="pointer-events-none absolute left-0 top-1/2 w-full -translate-y-1/2"
               >
                 {/* Strike line */}
                 <motion.path
