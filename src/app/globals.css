@@ -447,11 +447,13 @@ html, body {
   .inside-heading .middle {
     font-size: clamp(2.6rem, 4vw, 4rem);
     font-weight: 900;
-    background: linear-gradient(90deg,#00e7ff,#00dfb8,#4affad);
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;          /* white text */
     line-height: 0.9;
+  
+    /* remove gradient behavior */
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
   }
 
   .inside-description {

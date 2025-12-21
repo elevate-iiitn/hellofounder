@@ -1,18 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
+import { useEffect, useRef } from "react";
 import { Calendar, Users, Rocket } from "lucide-react";
-import ReadOnlyRangeCalendar from "@/components/ReadOnlyRangeCalendar";
-import CalendarModal from "@/components/CalendarModal";
-
-/* ================= CONFIG ================= */
-
-const FROM = new Date(2026, 1, 15); // Feb 15, 2026
-const TO   = new Date(2026, 2, 31); // Mar 31, 2026
 
 /* ================= PIXEL ENGINE ================= */
-
 
 class Pixel {
   constructor(ctx, x, y, color, speed, delay) {
@@ -77,8 +68,6 @@ export default function Cohort() {
   const pixelsRef = useRef([]);
   const rafRef = useRef(null);
 
-  const [showModal, setShowModal] = useState(false);
-
   /* ---------- INIT PIXELS ---------- */
   const initPixels = () => {
     if (!containerRef.current || !canvasRef.current) return;
@@ -121,7 +110,6 @@ export default function Cohort() {
   const animate = (mode) => {
     cancelAnimationFrame(rafRef.current);
 
-    // reset state before every animation
     for (const p of pixelsRef.current) {
       p.counter = 0;
       p.idle = false;
@@ -179,55 +167,29 @@ export default function Cohort() {
         <canvas ref={canvasRef} className="absolute inset-0" />
 
         {/* CONTENT */}
-        <div className="relative z-10 flex flex-col lg:flex-row gap-10">
-          {/* LEFT */}
-          <div className="flex-1">
-            <h2 className="text-3xl md:text-5xl font-semibold text-teal-400">
-              Founding cohort starts February 15, 2026
-            </h2>
+        <div className="relative z-10 max-w-3xl">
+          <h2 className="text-3xl md:text-5xl font-semibold text-white">
+            Founding cohort starts February 15, 2026
+          </h2>
 
-            <div className="mt-8 space-y-4 text-gray-300">
-              <div className="flex items-center gap-3">
-                <Calendar size={18} className="text-teal-400" />
-                <span>45 Days Online Cohort</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Users size={18} className="text-orange-400" />
-                <span>Limited to 25 founders</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Rocket size={18} className="text-teal-400" />
-                <span>Access to Pitch Day</span>
-              </div>
+          <div className="mt-8 space-y-4 text-gray-300">
+            <div className="flex items-center gap-3">
+              <Calendar size={18} className="text-teal-400" />
+              <span>45 Days Online Cohort</span>
             </div>
 
-            {/* MOBILE BUTTON */}
-            <button
-              onClick={() => setShowModal(true)}
-              className="mt-6 inline-flex lg:hidden rounded-lg
-                         bg-teal-500 px-4 py-2 text-sm
-                         font-semibold text-black"
-            >
-              View Schedule
-            </button>
-          </div>
+            <div className="flex items-center gap-3">
+              <Users size={18} className="text-orange-400" />
+              <span>Limited to 25 founders</span>
+            </div>
 
-          {/* RIGHT — DESKTOP ONLY */}
-          <div className="hidden lg:block shrink-0">
-            <ReadOnlyRangeCalendar from={FROM} to={TO} />
+            <div className="flex items-center gap-3">
+              <Rocket size={18} className="text-teal-400" />
+              <span>Access to Pitch Day</span>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* MOBILE MODAL */}
-      <CalendarModal
-        open={showModal}
-        onClose={() => setShowModal(false)}
-        from={FROM}
-        to={TO}
-      />
     </section>
   );
 }

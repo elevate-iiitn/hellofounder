@@ -25,7 +25,7 @@ export default function Home() {
 
       <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
         <span className="text-white">Meet Our </span>
-        <span className="font-semibold text-teal-400">Mentors</span>
+        <span className="font-semibold text-white-400">Mentors</span>
       </h2>
       {/* <br/><br/><br/><br/><br/><br/><br/> */}
       <MentorsSection />
@@ -35,7 +35,7 @@ export default function Home() {
       <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
         <span className="text-white">Learn all the relevant skills to be </span>
         <br />
-        <span className="font-semibold text-teal-400">Investment Ready</span>
+        <span className="font-semibold text-white-400">Investment Ready</span>
       </h2>
       <br></br>
       <Skill />
@@ -51,7 +51,7 @@ export default function Home() {
       >
         <span className="text-white">Curriculum Overview</span>
         <br />
-        <span className="font-semibold text-teal-400">
+        <span className="font-semibold text-white-400">
           Designed for Emerging Founders
         </span>
       </h2>
@@ -68,7 +68,7 @@ export default function Home() {
       <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
         <span className="text-white">Program Certification</span>
         <br />
-        <span className="font-semibold text-teal-400">
+        <span className="font-semibold text-white-400">
           Marking Your Transition from Learner to Builder
         </span>
       </h2>
@@ -79,7 +79,7 @@ export default function Home() {
         className="scroll-mt-24 mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl"
       >
         <span className="text-white">Frequently Asked </span>
-        <span className="font-semibold text-teal-400">Questions</span>
+        <span className="font-semibold text-white-400">Questions</span>
       </h2>
       <FAQs />
       {/* <br/><br/><br/><br/><br/><br/><br/> */}
