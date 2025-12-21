@@ -22,10 +22,15 @@ export default function Home() {
       <section id="hero">
         <Hero />
       </section>
-      <PixelCard />
-      <br />
-      <br />
-      <br />
+
+      <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+        <span className="text-white">Meet Our </span>
+        <span className="font-semibold text-teal-400">Mentors</span>
+      </h2>
+      {/* <br/><br/><br/><br/><br/><br/><br/> */}
+      <MentorsSection />
+
+      <InsideHelloFounder />
 
       <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
         <span className="text-white">Learn all the relevant skills to be </span>
@@ -35,14 +40,10 @@ export default function Home() {
       <br></br>
       <Skill />
 
-      <InsideHelloFounder />
-
-      <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-        <span className="text-white">Meet Our </span>
-        <span className="font-semibold text-teal-400">Mentors</span>
-      </h2>
-      {/* <br/><br/><br/><br/><br/><br/><br/> */}
-      <MentorsSection />
+      <PixelCard />
+      <br />
+      <br />
+      <br />
 
       <h2
         id="curriculum"
