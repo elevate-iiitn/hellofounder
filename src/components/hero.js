@@ -96,9 +96,10 @@ const Hero = () => {
           </p>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
+          {/*<div className="flex justify-center">
             <Button />
           </div>
+          */}
         </div>
       </div>
     </div>
