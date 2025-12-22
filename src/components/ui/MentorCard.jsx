@@ -10,7 +10,7 @@ export default function MentorCard({ photo }) {
       onMouseLeave={() => setHover(false)}
       style={{
         width: "300px",
-        height: "336px",
+        height: "396px",
         position: "relative",
         borderRadius: "20px",
         overflow: "hidden",
