@@ -61,8 +61,8 @@ export function Header() {
       >
         <a href="#hero" aria-label="Scroll to top">
           <Image
-            src="/images/logo-no-bg.png"
-            alt="HelloFounder Logo"
+            src="/images/isflogo-nobg.png"
+            alt="ISF Logo"
             width={120}
             height={40}
             className="h-10 w-auto md:h-12"
@@ -131,7 +131,7 @@ export function Header() {
 							Sign In
 						</Button> */}
             <a
-              href="https://tally.so/r/gDayXN" // 👈 your actual Tally link
+              href="https://tally.so/r/gDayXN"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full"
