@@ -3,14 +3,13 @@
 import MentorCard from "@/components/ui/MentorCard";
 
 const mentors = [
-  { name: "Vaani Chugh", role: "Founder", photo: "/images/xyz.png" },
-  { name: "John Doe", role: "Ex-EIR", photo: "/images/xyz.png" },
-  { name: "Aditi Sharma", role: "Chief of Staff", photo: "/images/xyz.png" },
-  { name: "Rahul Mehta", role: "Growth Lead", photo: "/images/xyz.png" },
-  { name: "Sneha Kapoor", role: "Operator", photo: "/images/xyz.png" },
+  { photo: "/images/nikhil.png" },
+  { photo: "/images/darika.png" },
+  { photo: "/images/mansukh.png" },
+  { photo: "/images/prabal.png" },
 ];
 
-export default function MentorsSection() {
+export default function MentorsSectionRL() {
   return (
     <div
       style={{
@@ -20,27 +19,24 @@ export default function MentorsSection() {
         padding: "40px 0",
       }}
     >
-      {/* INLINE CSS (KEYFRAMES + HOVER PAUSE) */}
       <style>{`
-        @keyframes marqueeRTL {
+        @keyframes marqueeRL {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
-        .track {
+        .track-rl {
           display: flex;
           gap: 24px;
           width: max-content;
-          animation: marqueeRTL 20s linear infinite;
+          animation: marqueeRL 20s linear infinite;
         }
-        .wrapper:hover .track {
+        .wrapper:hover .track-rl {
           animation-play-state: paused;
         }
       `}</style>
 
-      {/* WRAPPER */}
       <div className="wrapper">
-        {/* MOVING TRACK */}
-        <div className="track">
+        <div className="track-rl">
           {[...mentors, ...mentors].map((mentor, index) => (
             <MentorCard key={index} {...mentor} />
           ))}

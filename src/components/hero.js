@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 import Button from "./mbutton";
 import { koulen } from "@/lib/fonts";
 
-
-
 const Hero = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
         <div className="max-w-6xl text-center">
           {/* Main Headline */}
-          <h1 className={`${koulen.className} relative mb-8 text-5xl leading-none tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl`}>
+          <h1
+            className={`${koulen.className} relative mb-8 text-5xl leading-none tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl`}
+          >
             The only <span className="font-light text-teal-400">B-School</span>
             <br />
             for founders,

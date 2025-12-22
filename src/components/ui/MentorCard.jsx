@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function MentorCard({ name, role, photo }) {
+export default function MentorCard({ photo }) {
   const [hover, setHover] = useState(false);
 
   return (
@@ -19,7 +19,9 @@ export default function MentorCard({ name, role, photo }) {
         flexShrink: 0,
 
         /* 🔥 Hover animation */
-        transform: hover ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",
+        transform: hover
+          ? "translateY(-8px) scale(1.02)"
+          : "translateY(0) scale(1)",
         boxShadow: hover
           ? "0 20px 40px rgba(0,0,0,0.55)"
           : "0 8px 20px rgba(0,0,0,0.35)",
@@ -29,7 +31,6 @@ export default function MentorCard({ name, role, photo }) {
       {/* IMAGE — FULL CARD */}
       <Image
         src={photo}
-        alt={name}
         fill
         style={{
           objectFit: "cover",
@@ -80,7 +81,7 @@ export default function MentorCard({ name, role, photo }) {
           transition: "transform 0.35s ease",
         }}
       >
-        <div
+        {/* <div
           style={{
             fontSize: "13px",
             opacity: 0.8,
@@ -89,9 +90,9 @@ export default function MentorCard({ name, role, photo }) {
           }}
         >
           {role}
-        </div>
+        </div> */}
 
-        <div
+        {/* <div
           style={{
             fontSize: "20px",
             fontWeight: 600,
@@ -99,7 +100,7 @@ export default function MentorCard({ name, role, photo }) {
           }}
         >
           {name}
-        </div>
+        </div> */}
       </div>
     </div>
   );

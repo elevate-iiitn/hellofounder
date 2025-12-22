@@ -7,11 +7,12 @@ import ApplyCTA from "../components/apply-cta";
 import FAQs from "../components/text-reveal-faqs.jsx";
 import Footer from "../components/footer.jsx";
 import Skill from "../components/skills";
-import MentorsSection from "@/components/MentorsSection";
+import MentorsSectionLR from "@/components/MentorsSectionLR";
 import PixelCard from "../components/Cohort";
 import InsideHelloFounder from "@/components/InsideHelloFounder";
 import PricingCard from "../components/PricingCard";
 import BackgroundSection from "../components/BackgroundSection";
+import MentorsSectionRL from "@/components/MentorsSectionRL";
 
 export default function Home() {
   return (
@@ -31,7 +32,8 @@ export default function Home() {
         <span className="font-semibold text-white-400">Mentors</span>
       </h2>
       {/* <br/><br/><br/><br/><br/><br/><br/> */}
-      <MentorsSection />
+      <MentorsSectionLR />
+      <MentorsSectionRL />
 
       <InsideHelloFounder />
 
