@@ -32,8 +32,8 @@ export default function Home() {
         <span className="font-semibold text-white-400">Mentors</span>
       </h2>
       {/* <br/><br/><br/><br/><br/><br/><br/> */}
-      <MentorsSectionLR />
       <MentorsSectionRL />
+      <MentorsSectionLR />
 
       <InsideHelloFounder />
 
