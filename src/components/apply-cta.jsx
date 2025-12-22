@@ -5,10 +5,7 @@ import { SparklesText } from "../components/ui/sparkles-text";
 
 export default function ApplyCTA() {
   return (
-    <section
-      id="pricing"
-      className="hidden lg:block scroll-mt-24 py-16 sm:py-20"
-    >
+    <section className="hidden lg:block scroll-mt-24 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="relative flex flex-col md:flex-row overflow-hidden rounded-[28px] sm:rounded-[36px]">
           {/* LEFT PANEL */}
@@ -66,20 +63,19 @@ export default function ApplyCTA() {
                 </span>
               </div>
 
-             <Link
-  href="https://tally.so/r/gDayXN"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center justify-center
+              <Link
+                href="https://tally.so/r/gDayXN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center
              px-7 sm:px-8 py-3.5 sm:py-4 rounded-full
              font-semibold text-black
              bg-gradient-to-r from-teal-400 to-cyan-400
              hover:scale-105 transition
              shadow-[0_0_25px_rgba(45,212,191,0.35)]"
->
-  Apply Now
-</Link>
-
+              >
+                Apply Now
+              </Link>
             </div>
           </div>
         </div>
