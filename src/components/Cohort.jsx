@@ -86,7 +86,7 @@ export default function CohortSpotlight() {
               active:scale-[0.96]
             "
             >
-              JOIN NOW
+              APPLY NOW
             </Link>
           </div>
         </div>
