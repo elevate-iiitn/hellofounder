@@ -27,7 +27,7 @@ export default function Home() {
         </section>
       </BackgroundSection>
 
-      <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
+      <h2 className="mb-5 text-center font-medium text-white text-3xl tracking-tight md:text-3xl">
         <span className="text-white">Meet Our </span>
         <span className="font-semibold text-white-400">Mentors</span>
       </h2>
