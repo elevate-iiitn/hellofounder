@@ -1,195 +1,94 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import SpotlightCard from "@/components/SpotlightCard";
+import { SparklesText } from "@/components/ui/sparkles-text";
 import { Calendar, Users, Rocket } from "lucide-react";
+import { poppins } from "@/lib/fonts";
 
-/* ================= PIXEL ENGINE ================= */
-
-class Pixel {
-  constructor(ctx, x, y, color, speed, delay) {
-    this.ctx = ctx;
-    this.x = x;
-    this.y = y;
-    this.color = color;
-
-    this.size = 0;
-    this.min = 0;
-    this.max = Math.random() * 1.6 + 0.6;
-
-    this.speed = speed;
-    this.delay = delay;
-    this.counter = 0;
-
-    this.idle = true;
-  }
-
-  draw() {
-    if (this.size <= 0) return;
-    this.ctx.fillStyle = this.color;
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
-  }
-
-  appear() {
-    this.idle = false;
-
-    if (this.counter < this.delay) {
-      this.counter++;
-      return;
-    }
-
-    if (this.size < this.max) {
-      this.size += this.speed;
-    } else {
-      this.idle = true;
-    }
-
-    this.draw();
-  }
-
-  disappear() {
-    this.counter = 0;
-
-    if (this.size > 0) {
-      this.size -= this.speed;
-      if (this.size < 0) this.size = 0;
-      this.draw();
-      this.idle = false;
-    } else {
-      this.idle = true;
-    }
-  }
-}
-
-/* ================= COMPONENT ================= */
-
-export default function Cohort() {
-  const containerRef = useRef(null);
-  const canvasRef = useRef(null);
-  const pixelsRef = useRef([]);
-  const rafRef = useRef(null);
-
-  /* ---------- INIT PIXELS ---------- */
-  const initPixels = () => {
-    if (!containerRef.current || !canvasRef.current) return;
-
-    const { width, height } = containerRef.current.getBoundingClientRect();
-    const ctx = canvasRef.current.getContext("2d");
-
-    canvasRef.current.width = width;
-    canvasRef.current.height = height;
-
-    const colors = ["#00dfc4", "#00e7ff", "#0f172a"];
-    const gap = 10;
-    const speed = 0.15;
-
-    const pixels = [];
-
-    for (let x = 0; x < width; x += gap) {
-      for (let y = 0; y < height; y += gap) {
-        const dx = x - width / 2;
-        const dy = y - height / 2;
-        const delay = Math.sqrt(dx * dx + dy * dy) * 0.15;
-
-        pixels.push(
-          new Pixel(
-            ctx,
-            x,
-            y,
-            colors[Math.floor(Math.random() * colors.length)],
-            speed,
-            delay
-          )
-        );
-      }
-    }
-
-    pixelsRef.current = pixels;
-  };
-
-  /* ---------- ANIMATION LOOP ---------- */
-  const animate = (mode) => {
-    cancelAnimationFrame(rafRef.current);
-
-    for (const p of pixelsRef.current) {
-      p.counter = 0;
-      p.idle = false;
-    }
-
-    const frame = () => {
-      const ctx = canvasRef.current.getContext("2d");
-      ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-
-      let allIdle = true;
-
-      for (const p of pixelsRef.current) {
-        p[mode]();
-        if (!p.idle) allIdle = false;
-      }
-
-      if (!allIdle) {
-        rafRef.current = requestAnimationFrame(frame);
-      } else {
-        cancelAnimationFrame(rafRef.current);
-        rafRef.current = null;
-      }
-    };
-
-    rafRef.current = requestAnimationFrame(frame);
-  };
-
-  /* ---------- LIFECYCLE ---------- */
-  useEffect(() => {
-    initPixels();
-    const ro = new ResizeObserver(initPixels);
-    ro.observe(containerRef.current);
-
-    return () => {
-      ro.disconnect();
-      cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
-
-  /* ================= RENDER ================= */
-
+export default function CohortSpotlight() {
   return (
     <section className="px-4 md:px-20 my-20">
-      <div
-        ref={containerRef}
-        onMouseEnter={() => animate("appear")}
-        onMouseLeave={() => animate("disappear")}
-        className="
-          relative isolate overflow-hidden rounded-3xl
-          border border-white/10 bg-[#0b0b0c]
+      <SpotlightCard
+        className={`
+          ${poppins.className}
+          w-full
+          rounded-3xl
+          bg-[#0b0b0c]
+          border border-white/10
           p-6 md:p-10
-        "
+        `}
+        spotlightColor="rgba(0, 231, 255, 0.18)"
       >
-        {/* CANVAS */}
-        <canvas ref={canvasRef} className="absolute inset-0" />
+        {/* MAIN GRID */}
+        <div className="flex flex-col lg:flex-row gap-12 items-start lg:items-end">
+          
+          {/* LEFT CONTENT */}
+          <div className="flex-1 space-y-10">
+            
+            {/* HEADING — POPPINS + SPARKLES */}
+            <SparklesText
+              text="Founding cohort starts February 15, 2026"
+              className="
+                text-3xl
+                md:text-5xl
+                lg:text-6xl
+                font-semibold
+                text-white
+                leading-tight
+                tracking-wide
+              "
+            />
 
-        {/* CONTENT */}
-        <div className="relative z-10 max-w-3xl">
-          <h2 className="text-3xl md:text-5xl font-semibold text-white">
-            Founding cohort starts February 15, 2026
-          </h2>
+            {/* DETAILS */}
+            <div className="space-y-4 text-gray-300 text-base md:text-lg">
+              <div className="flex items-center gap-3">
+                <Calendar size={18} className="text-teal-400" />
+                <span>45 Days Online Cohort</span>
+              </div>
 
-          <div className="mt-8 space-y-4 text-gray-300">
-            <div className="flex items-center gap-3">
-              <Calendar size={18} className="text-teal-400" />
-              <span>45 Days Online Cohort</span>
-            </div>
+              <div className="flex items-center gap-3">
+                <Users size={18} className="text-orange-400" />
+                <span>Limited to 25 founders</span>
+              </div>
 
-            <div className="flex items-center gap-3">
-              <Users size={18} className="text-orange-400" />
-              <span>Limited to 25 founders</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Rocket size={18} className="text-teal-400" />
-              <span>Access to Pitch Day</span>
+              <div className="flex items-center gap-3">
+                <Rocket size={18} className="text-teal-400" />
+                <span>Access to Pitch Day</span>
+              </div>
             </div>
           </div>
+
+          {/* RIGHT / CTA */}
+          <div className="w-full lg:w-auto flex justify-start lg:justify-end">
+            <button
+              className="
+                relative inline-flex items-center justify-center
+                rounded-xl
+                px-10 py-4
+                font-semibold
+                text-black
+                overflow-hidden
+
+                bg-gradient-to-r
+                from-teal-400
+                via-cyan-400
+                to-emerald-400
+
+                shadow-lg
+                shadow-teal-500/30
+                hover:shadow-teal-400/50
+
+                transition-all
+                duration-300
+                hover:scale-[1.05]
+                active:scale-[0.96]
+              "
+            >
+              JOIN NOW
+            </button>
+          </div>
         </div>
-      </div>
+      </SpotlightCard>
     </section>
   );
 }
