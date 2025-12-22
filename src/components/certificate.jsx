@@ -96,23 +96,28 @@ export default function Certificate() {
 
             {/* CTA */}
             <div className="pt-2">
-              <button
-                className="w-full sm:w-auto px-6 py-3 rounded-lg text-white font-medium
-                                 bg-gradient-to-r from-teal-600 to-teal-600
-                                 hover:from-teal-500 hover:to-teal-400
-                                 shadow-md flex items-center justify-center gap-2"
-              >
-                Claim Your Certificate
-                {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12h14M12 5l7 7-7 7"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg> */}
-              </button>
+              <div className="flex justify-center pt-2">
+              <a
+  href="https://tally.so/r/gDayXN"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-fit px-6 py-3 rounded-lg text-white font-medium
+             bg-gradient-to-r from-teal-600 to-teal-600
+             hover:from-teal-500 hover:to-teal-400
+             shadow-md flex items-center justify-center gap-2"
+>
+  Claim Your Certificate
+  {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+    <path
+      d="M5 12h14M12 5l7 7-7 7"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg> */}
+</a></div>
+
             </div>
           </motion.div>
         </div>
