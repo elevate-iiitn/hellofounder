@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function MentorCard({ name, role, photo }) {
+export default function MentorCard({ photo }) {
   const [hover, setHover] = useState(false);
 
   return (
@@ -80,7 +80,7 @@ export default function MentorCard({ name, role, photo }) {
           transition: "transform 0.35s ease",
         }}
       >
-        <div
+        {/* <div
           style={{
             fontSize: "13px",
             opacity: 0.8,
@@ -89,9 +89,9 @@ export default function MentorCard({ name, role, photo }) {
           }}
         >
           {role}
-        </div>
+        </div> */}
 
-        <div
+        {/* <div
           style={{
             fontSize: "20px",
             fontWeight: 600,
@@ -99,7 +99,7 @@ export default function MentorCard({ name, role, photo }) {
           }}
         >
           {name}
-        </div>
+        </div> */}
       </div>
     </div>
   );
