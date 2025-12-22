@@ -29,7 +29,7 @@ export function Header() {
       {/* HEADER BAR */}
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 mx-auto w-full max-w-5xl md:rounded-md md:border md:transition-all",
+          "fixed top-0 left-0 right-0 z-50 mx-auto w-full max-w-5xl md:rounded-md md:transition-all",
           {
             "bg-background/95 supports-backdrop-filter:bg-background/50 backdrop-blur-lg md:top-4 md:max-w-4xl md:shadow":
               scrolled && !open,
