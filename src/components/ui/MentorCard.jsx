@@ -90,9 +90,9 @@ export default function MentorCard({ photo }) {
           }}
         >
           {role}
-        </div> */}
+        </div>
 
-        {/* <div
+        <div
           style={{
             fontSize: "20px",
             fontWeight: 600,
