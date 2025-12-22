@@ -66,17 +66,20 @@ export default function ApplyCTA() {
                 </span>
               </div>
 
-              <Link
-                href="https://tally.so/r/gDayXN"
-                className="inline-flex items-center justify-center
-                           px-7 sm:px-8 py-3.5 sm:py-4 rounded-full
-                           font-semibold text-black
-                           bg-gradient-to-r from-teal-400 to-cyan-400
-                           hover:scale-105 transition
-                           shadow-[0_0_25px_rgba(45,212,191,0.35)]"
-              >
-                Apply Now
-              </Link>
+             <Link
+  href="https://tally.so/r/gDayXN"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center
+             px-7 sm:px-8 py-3.5 sm:py-4 rounded-full
+             font-semibold text-black
+             bg-gradient-to-r from-teal-400 to-cyan-400
+             hover:scale-105 transition
+             shadow-[0_0_25px_rgba(45,212,191,0.35)]"
+>
+  Apply Now
+</Link>
+
             </div>
           </div>
         </div>
