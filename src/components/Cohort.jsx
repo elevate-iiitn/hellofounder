@@ -4,6 +4,7 @@ import SpotlightCard from "@/components/SpotlightCard";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { Calendar, Users, Rocket } from "lucide-react";
 import { poppins } from "@/lib/fonts";
+import Link from "next/link";
 
 export default function CohortSpotlight() {
   return (
@@ -21,10 +22,8 @@ export default function CohortSpotlight() {
       >
         {/* MAIN GRID */}
         <div className="flex flex-col lg:flex-row gap-12 items-start lg:items-end">
-          
           {/* LEFT CONTENT */}
           <div className="flex-1 space-y-10">
-            
             {/* HEADING — POPPINS + SPARKLES */}
             <SparklesText
               text="Founding cohort starts February 15, 2026"
@@ -60,32 +59,35 @@ export default function CohortSpotlight() {
 
           {/* RIGHT / CTA */}
           <div className="w-full lg:w-auto flex justify-start lg:justify-end">
-            <button
+            <Link
+              href="https://tally.so/r/gDayXN" // ← your form link
+              target="_blank"
+              rel="noopener noreferrer"
               className="
-                relative inline-flex items-center justify-center
-                rounded-xl
-                px-10 py-4
-                font-semibold
-                text-black
-                overflow-hidden
+              relative inline-flex items-center justify-center
+              rounded-xl
+              px-10 py-4
+              font-semibold
+              text-black
+              overflow-hidden
 
-                bg-gradient-to-r
-                from-teal-400
-                via-cyan-400
-                to-emerald-400
+              bg-gradient-to-r
+              from-teal-400
+              via-cyan-400
+              to-emerald-400
 
-                shadow-lg
-                shadow-teal-500/30
-                hover:shadow-teal-400/50
+              shadow-lg
+              shadow-teal-500/30
+              hover:shadow-teal-400/50
 
-                transition-all
-                duration-300
-                hover:scale-[1.05]
-                active:scale-[0.96]
-              "
+              transition-all
+              duration-300
+              hover:scale-[1.05]
+              active:scale-[0.96]
+            "
             >
               JOIN NOW
-            </button>
+            </Link>
           </div>
         </div>
       </SpotlightCard>
