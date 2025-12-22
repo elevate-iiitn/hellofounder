@@ -41,17 +41,6 @@ export default function MentorCard({ photo }) {
         priority
       />
 
-      {/* DARK OVERLAY */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(to top, rgba(10,9,20,0.9), rgba(10,9,20,0.55), rgba(10,9,20,0.15))",
-          zIndex: 1,
-        }}
-      />
-
       {/* GRID OVERLAY — VERY LIGHT */}
       <div
         style={{
