@@ -3,10 +3,10 @@
 import MentorCard from "@/components/ui/MentorCard";
 
 const mentors = [
-  { photo: "/images/nikhil_aparajit.png" },
-  { photo: "/images/darika_jain.png" },
-  { photo: "/images/mansukh_singh.png" },
-  { photo: "/images/prabal_monga.png" },
+  { photo: "/images/krishna_thakur.png" },
+  { photo: "/images/vednidhi_chhabbra.png" },
+  { photo: "/images/kunal_jiwani.png" },
+  { photo: "/images/vipul_ghai.png" },
 ];
 
 export default function MentorsSectionRL() {
