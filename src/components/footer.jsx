@@ -6,11 +6,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-[#060606] to-[#0f2f2b]">
-
       {/* TOP BAR */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-6">
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-0 sm:items-center sm:justify-between text-white/70 text-base sm:text-lg">
-
           {/* LINKS */}
           <div className="flex gap-6 sm:gap-10">
             <Link href="#curriculum" className="hover:text-white">
@@ -39,7 +37,6 @@ export default function Footer() {
       {/* MAIN BAND */}
       <div className="mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-between">
-
           {/* LOGO */}
           <div className="relative w-[180px] h-[120px] sm:w-[220px] sm:h-[150px] lg:w-[300px] lg:h-[200px]">
             <Image
@@ -57,7 +54,7 @@ export default function Footer() {
             </span>
 
             <Link
-              href="https://your-typeform-or-googleform-link.com"
+              href="https://tally.so/r/gDayXN"
               target="_blank"
               rel="noopener noreferrer"
               className="group w-16 h-16 sm:w-20 sm:h-20 rounded-2xl

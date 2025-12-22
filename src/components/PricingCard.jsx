@@ -10,7 +10,7 @@ export default function PricingCard({
   price = "₹4,999",
   originalPrice = "₹7,000",
   ctaText = "Apply to cohort",
-  ctaLink = "https://your-typeform-or-googleform-link.com",
+  ctaLink = "https://tally.so/r/gDayXN",
   footerText = "Not sure? Schedule a call with our team to know more.",
 }) {
   return (

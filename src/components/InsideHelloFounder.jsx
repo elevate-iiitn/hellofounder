@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import SpotlightCard from '@/components/SpotlightCard';
-import { SparklesText } from '@/components/ui/sparkles-text';
+import SpotlightCard from "@/components/SpotlightCard";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 export default function InsideHelloFounder() {
   return (
@@ -19,16 +19,19 @@ export default function InsideHelloFounder() {
           </div>
 
           <p className="inside-description mt-8 max-w-xl">
-            The Indian School of Founders Program is designed for ambitious builders and emerging founders
-            who want to accelerate their journey into startups. Whether you're exploring ideas,
-            validating early concepts, or preparing to operate inside a high-pace founder’s office —
-            this program gives you the skills, mindset, and structure to level up fast.
+            The Indian School of Founders Program is designed for ambitious
+            builders and emerging founders who want to accelerate their journey
+            into startups. Whether you're exploring ideas, validating early
+            concepts, or preparing to operate inside a high-pace founder’s
+            office — this program gives you the skills, mindset, and structure
+            to level up fast.
           </p>
 
           <p className="inside-description mt-4 max-w-xl">
-            Guided by operators, early-stage founders, and product leaders, HelloFounder blends
-            zero-to-one execution, founder-side problem solving, and high-context learning so you can
-            build with clarity and confidence.
+            Guided by operators, early-stage founders, and product leaders,
+            HelloFounder blends zero-to-one execution, founder-side problem
+            solving, and high-context learning so you can build with clarity and
+            confidence.
           </p>
         </div>
 
@@ -38,7 +41,8 @@ export default function InsideHelloFounder() {
             <SparklesText text="Who's this for?" />
 
             <p className="inside-subtext">
-              For professionals and startup enthusiasts who want to work directly with founders…
+              For professionals and startup enthusiasts who want to work
+              directly with founders…
             </p>
 
             <div className="card-divider" />
@@ -56,7 +60,8 @@ export default function InsideHelloFounder() {
                   </svg>
                 </span>
                 <span>
-                  <span className="accent">Students</span> who want to build before graduating
+                  <span className="accent">Students</span> who want to build
+                  before graduating
                 </span>
               </p>
 
@@ -73,7 +78,8 @@ export default function InsideHelloFounder() {
                   </svg>
                 </span>
                 <span>
-                  <span className="accent">Early founders</span> with half-baked ideas
+                  <span className="accent">Early founders</span> with half-baked
+                  ideas
                 </span>
               </p>
 
@@ -90,7 +96,8 @@ export default function InsideHelloFounder() {
                   </svg>
                 </span>
                 <span>
-                  <span className="accent">Professionals</span> transitioning into entrepreneurship
+                  <span className="accent">Professionals</span> transitioning
+                  into entrepreneurship
                 </span>
               </p>
             </div>
@@ -101,7 +108,14 @@ export default function InsideHelloFounder() {
               <div className="small-meta text-xs text-gray-400">
                 1st Cohort February 15, 2026 • 45 Days
               </div>
-              <button className="pill">Apply</button>
+              <a
+                href="https://tally.so/r/gDayXN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill inline-flex items-center justify-center"
+              >
+                Apply
+              </a>
             </div>
           </SpotlightCard>
         </div>
