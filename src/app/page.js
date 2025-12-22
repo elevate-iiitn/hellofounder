@@ -1,4 +1,4 @@
-import DarkVeil from "../components/darkveil";
+// import DarkVeil from "../components/darkveil";
 import { Header } from "../components/header-2";
 import Hero from "../components/hero";
 import Curriculum from "../components/curriculum";
@@ -11,17 +11,20 @@ import MentorsSection from "@/components/MentorsSection";
 import PixelCard from "../components/Cohort";
 import InsideHelloFounder from "@/components/InsideHelloFounder";
 import PricingCard from "../components/PricingCard";
+import BackgroundSection from "../components/BackgroundSection";
 
 export default function Home() {
   return (
     <>
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 pointer-events-none">
         <DarkVeil />
-      </div>
+      </div> */}
       <Header />
-      <section id="hero">
-        <Hero />
-      </section>
+      <BackgroundSection className="min-h-screen">
+        <section id="hero">
+          <Hero />
+        </section>
+      </BackgroundSection>
 
       <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
         <span className="text-white">Meet Our </span>
