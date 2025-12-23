@@ -24,11 +24,15 @@ Each task should be checked off once completed and verified.
 
 ## Mentors Section
 
-- [ ] Reduce vertical gap between the two lines of mentor text
+- [done] Reduce vertical gap between the two lines of mentor text
 - [done] Maintain consistent heading style across Mentors section
-- [ ] In mobile view card must appear smaller and with less space in between, also reduce space between hero and mentor section in mobile view.
+- [done] In mobile view card must appear smaller and with less space in between, also reduce space between hero and mentor section in mobile view.
 
 ---
+
+## Inside and Cohort Section
+
+- [ ] Update date to 1st March, 2026
 
 ## Typography & Headings
 
@@ -41,12 +45,13 @@ Each task should be checked off once completed and verified.
 
 - [ ] Update **Apply CTA card** to use a full green gradient
 - [ ] Remove white background from CTA (current styling feels inconsistent)
+- [ ] Make two pricings , Early Bird before 1 Jan, 2026 as 4999 and then 7999
 
 ---
 
 ## Animations & Interactions
 
-- [ ] Retain sparkle text and card hover animations
+- [done] Retain sparkle text and card hover animations
   - These interactions received positive feedback and should remain unchanged
 
 ---
