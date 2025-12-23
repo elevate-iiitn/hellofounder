@@ -7,6 +7,7 @@ const mentors = [
   { photo: "/images/vednidhi_chhabbra1.png" },
   { photo: "/images/kunal_jiwani1.png" },
   { photo: "/images/vipul_ghai1.png" },
+  { photo: "/images/samiksha_kedia1.png" },
 ];
 
 export default function MentorsSectionRL() {
