@@ -17,7 +17,7 @@ Each task should be checked off once completed and verified.
 ## Hero Section
 
 - [done] Remove **Apply** CTA from Hero section
-- [ ] Ensure **Mentors section is visible immediately on page load**
+- [done] Ensure **Mentors section is visible immediately on page load**
   - This may require reducing Hero typography size or vertical spacing
 
 ---
@@ -25,7 +25,8 @@ Each task should be checked off once completed and verified.
 ## Mentors Section
 
 - [ ] Reduce vertical gap between the two lines of mentor text
-- [ ] Maintain consistent heading style across Mentors section
+- [done] Maintain consistent heading style across Mentors section
+- [ ] In mobile view card must appear smaller and with less space in between, also reduce space between hero and mentor section in mobile view.
 
 ---
 
