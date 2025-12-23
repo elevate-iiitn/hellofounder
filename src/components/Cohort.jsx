@@ -27,7 +27,7 @@ export default function CohortSpotlight() {
           <div className="flex-1 space-y-10">
             {/* HEADING — KOULEN + SPARKLES */}
             <SparklesText
-              text="Founding cohort starts February 15, 2026"
+              text="Founding cohort starts March 1, 2026"
               className={`
                 ${koulen.className}
                 text-2xl

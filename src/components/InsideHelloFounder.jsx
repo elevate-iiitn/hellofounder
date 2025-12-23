@@ -106,7 +106,7 @@ export default function InsideHelloFounder() {
 
             <div className="card-footer flex items-center justify-between gap-4">
               <div className="small-meta text-xs text-gray-400">
-                1st Cohort February 15, 2026 • 45 Days
+                1st Cohort March 1, 2026 • 45 Days
               </div>
               <a
                 href="https://tally.so/r/gDayXN"
