@@ -5,8 +5,8 @@ import MentorCard from "@/components/ui/MentorCard";
 const mentors = [
   { photo: "/images/nikhil_aparajit1.png" },
   { photo: "/images/darika_jain1.png" },
-  { photo: "/images/mansukh_singh1.png" },
   { photo: "/images/prabal_monga1.png" },
+  { photo: "/images/mansukh_singh1.png" },
 ];
 
 export default function MentorsSectionLR() {
@@ -26,7 +26,7 @@ export default function MentorsSectionLR() {
         }
         .track-lr {
           display: flex;
-          gap: 24px;
+          gap: 12px;
           width: max-content;
           animation: marqueeLR 20s linear infinite;
         }
@@ -38,7 +38,13 @@ export default function MentorsSectionLR() {
       <div className="wrapper">
         <div className="track-lr">
           {[...mentors, ...mentors].map((mentor, index) => (
-            <MentorCard key={index} {...mentor} />
+           <div
+  key={index}
+  className="scale-[0.75] sm:scale-90 md:scale-100 origin-center"
+>
+  <MentorCard {...mentor} />
+</div>
+
           ))}
         </div>
       </div>

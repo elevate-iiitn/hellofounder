@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { poppins } from "@/lib/fonts";
 
+
 /**
  * Curriculum overview component
  *

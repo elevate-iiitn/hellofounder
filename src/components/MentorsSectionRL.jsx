@@ -6,8 +6,9 @@ const mentors = [
   { photo: "/images/krishna_thakur1.png" },
   { photo: "/images/vednidhi_chhabbra1.png" },
   { photo: "/images/kunal_jiwani1.png" },
-  { photo: "/images/vipul_ghai1.png" },
   { photo: "/images/samiksha_kedia1.png" },
+  { photo: "/images/vipul_ghai1.png" },
+  
 ];
 
 export default function MentorsSectionRL() {
@@ -27,7 +28,7 @@ export default function MentorsSectionRL() {
         }
         .track-rl {
           display: flex;
-          gap: 24px;
+          gap: 12px;
           width: max-content;
           animation: marqueeRL 20s linear infinite;
         }
@@ -39,7 +40,13 @@ export default function MentorsSectionRL() {
       <div className="wrapper">
         <div className="track-rl">
           {[...mentors, ...mentors].map((mentor, index) => (
-            <MentorCard key={index} {...mentor} />
+            <div
+  key={index}
+  className="scale-[0.75] sm:scale-90 md:scale-100 origin-center"
+>
+  <MentorCard {...mentor} />
+</div>
+
           ))}
         </div>
       </div>
