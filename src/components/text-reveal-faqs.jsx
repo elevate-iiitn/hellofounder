@@ -7,8 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import { motion } from "framer-motion";
-
 
 export default function FAQs() {
   const faqItems = [
@@ -48,6 +46,7 @@ export default function FAQs() {
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid gap-8 md:grid-cols-5 md:gap-12">
+          {/* LEFT */}
           <div className="md:col-span-2">
             <p className="text-muted-foreground mt-4 text-balance text-lg">
               Everything you need to know about ISF
@@ -64,6 +63,7 @@ export default function FAQs() {
             </p>
           </div>
 
+          {/* RIGHT */}
           <div className="md:col-span-3">
             <Accordion type="single" collapsible>
               {faqItems.map((item) => (
@@ -72,17 +72,25 @@ export default function FAQs() {
                   value={item.id}
                   className="border-b border-gray-200 dark:border-gray-600"
                 >
-                  <AccordionTrigger className="cursor-pointer text-base font-medium hover:no-underline">
+                  <AccordionTrigger
+                    className="
+                      text-base font-medium transition-colors
+                      hover:no-underline
+                      data-[state=open]:text-teal-400
+                    "
+                  >
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent>
-                    <BlurredStagger text={item.answer} />
+
+                  <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                    {item.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
 
+          {/* MOBILE FOOTNOTE */}
           <p className="text-muted-foreground mt-6 md:hidden">
             Can't find what you're looking for? Contact our{" "}
             <a
@@ -97,52 +105,3 @@ export default function FAQs() {
     </section>
   );
 }
-
-export const BlurredStagger = ({ text = "built by ruixen.com" }) => {
-  const headingText = text;
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.015,
-      },
-    },
-  };
-
-  const letterAnimation = {
-    hidden: {
-      opacity: 0,
-      filter: "blur(10px)",
-    },
-    show: {
-      opacity: 1,
-      filter: "blur(0px)",
-    },
-  };
-  
-  return (
-    <>
-      <div className="w-full">
-        <motion.p
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="text-base leading-relaxed wrap-break-words whitespace-normal"
-        >
-          {headingText.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              variants={letterAnimation}
-              transition={{ duration: 0.3 }}
-              className="inline-block">
-            
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        </motion.p>
-      </div>
-    </>
-  );
-};
