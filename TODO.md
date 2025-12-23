@@ -32,7 +32,7 @@ Each task should be checked off once completed and verified.
 
 ## Inside and Cohort Section
 
-- [ ] Update date to 1st March, 2026
+- [done] Update date to 1st March, 2026
 
 ## Typography & Headings
 
