@@ -1,36 +1,218 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ISF — Indian School of Founders Website
 
-## Getting Started
+A UI-first, performance-conscious web experience built for a founder-focused education brand.
 
-First, run the development server:
+This project showcases our approach to **frontend architecture, design systems, and interaction design** in a real-world, client-facing environment.
+
+> ⚠️ This repository contains proprietary client work.  
+> The code is shared here strictly for portfolio and evaluation purposes.
+
+---
+
+## Project Context
+
+The Indian School of Founders (ISF) website was designed and developed to communicate
+clarity, credibility, and momentum to early-stage founders and builders.
+
+The core challenge was balancing:
+
+- strong visual identity
+- information-dense content
+- conversion-focused CTAs
+- mobile-first usability
+
+while keeping the codebase **clean, maintainable, and scalable**.
+
+---
+
+## Key Focus Areas
+
+### UI / UX
+
+- Intentional typography hierarchy and rhythm
+- Section-based layout with clear visual boundaries
+- Subtle motion used only where it adds meaning
+- Full-screen mobile navigation with native interaction patterns
+- Clear CTA prioritization without overwhelming the user
+
+### Engineering
+
+- Component-driven architecture
+- Separation of UI primitives vs section-level components
+- Minimal runtime animation overhead
+- Predictable state management
+- Clean file organization for long-term maintainability
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** JavaScript (ES6+)
+- **Styling:** Tailwind CSS
+- **UI Primitives:** shadcn/ui
+- **Icons:** IconBuddy
+- **Animations:** CSS-first, selective Framer Motion
+- **Fonts:** Koulen, Poppins
+- **Deployment:** Client-hosted / Vercel
+
+---
+
+## Notable Implementation Details
+
+- **Header & Navigation**
+
+  - Scroll-aware glass header
+  - Full-screen mobile navigation with proper hit-testing
+  - Accessibility-conscious interaction patterns
+
+- **Hero Section**
+
+  - Strong typographic identity
+  - Controlled visual emphasis for key messaging
+  - Background treatment without performance-heavy assets
+
+- **Mentors Section**
+
+  - Horizontally scrollable cards
+  - Visual consistency across varied media assets
+  - Clean spacing and alignment across breakpoints
+
+- **FAQ Section**
+  - Removed unnecessary text animations for readability
+  - Active question highlighting to maintain user context
+  - Clean accordion behavior without JS-heavy state logic
+
+---
+
+## Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+hellofounder/
+├── .gitignore
+├── .vscode/
+│   └── settings.json
+├── components.json
+├── CONTRIBUTING.md
+├── eslint.config.mjs
+├── jsconfig.json
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public/
+│   ├── icons/
+│   │   ├── chart.svg
+│   │   ├── community.svg
+│   │   ├── feedback.svg
+│   │   ├── flag.svg
+│   │   ├── legal.svg
+│   │   ├── lightbulb.svg
+│   │   ├── linkedin.svg
+│   │   ├── megaphone.svg
+│   │   ├── pen.svg
+│   │   ├── presentation.svg
+│   │   ├── rocket.svg
+│   │   ├── sales.svg
+│   │   ├── target.svg
+│   │   ├── trophy.svg
+│   │   └── users.svg
+│   └── images/
+│       ├── (All Req Images)
+├── README.md
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.js
+│   │   ├── page.js
+│   │   └── tailwind.config.js
+│   ├── components/
+│   │   ├── apply-cta.jsx
+│   │   ├── BackgroundSection.jsx
+│   │   ├── CalendarModal.jsx
+│   │   ├── certificate.jsx
+│   │   ├── Cohort.jsx
+│   │   ├── curriculum.jsx
+│   │   ├── darkveil.js
+│   │   ├── footer.jsx
+│   │   ├── header-2.jsx
+│   │   ├── hero.js
+│   │   ├── InsideHelloFounder.jsx
+│   │   ├── mbutton.js
+│   │   ├── MentorsSectionLR.jsx
+│   │   ├── MentorsSectionRL.jsx
+│   │   ├── menu-toggle-icon.jsx
+│   │   ├── PricingCard.jsx
+│   │   ├── ReadOnlyRangeCalendar.jsx
+│   │   ├── skills.jsx
+│   │   ├── SpotlightCard.jsx
+│   │   ├── text-reveal-faqs.jsx
+│   │   ├── ui/
+│   │   │   ├── accordion.jsx
+│   │   │   ├── button.jsx
+│   │   │   ├── calendar.jsx
+│   │   │   ├── interactive-hover-button.jsx
+│   │   │   ├── MentorCard.jsx
+│   │   │   └── sparkles-text.jsx
+│   │   └── use-scroll.jsx
+│   └── lib/
+│       ├── fonts.js
+│       └── utils.js
+└── TODO.md
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This structure keeps:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- UI primitives reusable
+- sections easy to reason about
+- animations isolated and optional
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Design Philosophy
 
-To learn more about Next.js, take a look at the following resources:
+This project intentionally avoids:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- over-animation
+- unnecessary abstraction
+- premature optimization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Instead, the focus is on:
 
-## Deploy on Vercel
+- clarity over cleverness
+- maintainability over novelty
+- UI decisions that scale with content growth
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## What This Project Demonstrates
+
+- Ability to translate product goals into UI decisions
+- Comfort working on **real client constraints**
+- Strong attention to interaction details
+- Production-level frontend hygiene
+- Tasteful use of modern tooling without overengineering
+
+---
+
+## Collaboration Model
+
+All contributors participated across design, interaction, and implementation.
+Ownership was shared and decisions were made collaboratively.
+
+> Decisions were reviewed collectively with emphasis on tradeoffs and constraints
+
+- Arnab Mistry — https://github.com/ArnabMistry
+- Ojaswi Joshi — https://github.com/OjaswiJoshi13
+- Suraj Kiran Shewale — https://github.com/surajiiitn
+- Ayush Kathal — https://github.com/ayushkathal2005
+- Swapnil — https://github.com/Swapnil220705
+
+## Notes
+
+This repository is **not open for public contribution** and does not include an open-source license.
+
+If you’re reviewing this as part of a hiring or collaboration process and would like
+additional context, we would be happy to walk through architectural or design decisions.
