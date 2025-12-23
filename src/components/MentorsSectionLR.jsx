@@ -12,35 +12,45 @@ const mentors = [
 export default function MentorsSectionLR() {
   return (
     <div
-      style={{
-        width: "100%",
-        overflow: "hidden",
-        background: "#000",
-        padding: "40px 0",
-      }}
+      className="w-full overflow-hidden bg-black py-2 sm:py-4"
     >
       <style>{`
-        @keyframes marqueeLR {
-          from { transform: translateX(-50%); }
-          to { transform: translateX(0); }
-        }
-        .track-lr {
-          display: flex;
-          gap: 12px;
-          width: max-content;
-          animation: marqueeLR 20s linear infinite;
-        }
-        .wrapper:hover .track-lr {
-          animation-play-state: paused;
-        }
-      `}</style>
+  @keyframes marqueeLR {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  .track-lr {
+    display: flex;
+    gap: 6px;              /* mobile */
+    width: max-content;
+    animation: marqueeLR 20s linear infinite;
+  }
+
+  @media (min-width: 640px) {
+    .track-lr {
+      gap: 12px;           /* tablet */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .track-lr {
+      gap: 24px;           /* desktop */
+    }
+  }
+
+  .wrapper:hover .track-lr {
+    animation-play-state: paused;
+  }
+`}</style>
+
 
       <div className="wrapper">
         <div className="track-lr">
           {[...mentors, ...mentors].map((mentor, index) => (
            <div
   key={index}
-  className="scale-[0.75] sm:scale-90 md:scale-100 origin-center"
+  className="scale-[0.95] sm:scale-90 md:scale-100 origin-center"
 >
   <MentorCard {...mentor} />
 </div>
