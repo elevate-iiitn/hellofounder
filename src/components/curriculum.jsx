@@ -17,73 +17,141 @@ const defaultCurriculum = [
     week: "Week 1",
     track: "Discovery",
     session: "Session 1",
-    title: "The Entrepreneurial Foundation: Cultivating the Founder's Mindset",
+    title: "Startup Reality, Standards & What We’re Building",
     desc:
-      "Understand the characteristics, resilience, and vision required for an entrepreneurial journey. Develop self-awareness regarding personal strengths and weaknesses as a founder.",
+      "Get a clear picture of the startup ecosystem, expectations, and execution standards that define real founders and real startups.",
     icon: "/icons/flag.svg",
   },
   {
     week: "Week 1",
     track: "Discovery",
     session: "Session 2",
-    title: "Idea Validation & Market Discovery: From Concept to Opportunity",
+    title: "Build in Public & LinkedIn as a Founder Tool",
     desc:
-      "Learn systematic approaches to generating and evaluating startup ideas. Master techniques for thorough market research to identify unmet needs and significant opportunities.",
-    icon: "/icons/search.svg",
+      "Learn how founders use LinkedIn to build credibility, attract opportunities, and grow influence by sharing their journey.",
+    icon: "/icons/linkedin.svg",
   },
   {
     week: "Week 1",
     track: "Discovery",
     session: "Session 3",
-    title: "Deep Dive into Your Ideal Customer: Building Customer Profiles",
+    title: "Idea Selection & Problem Framing",
     desc:
-      "Define detailed customer personas to understand your target audience's demographics, psychographics, behaviors, and motivations. Learn to empathize with your future users.",
-    icon: "/icons/user-group.svg",
+      "Identify meaningful problems, validate their importance, and frame startup ideas with long-term potential.",
+    icon: "/icons/lightbulb.svg",
   },
+
   {
-    week: "Week 1",
-    track: "Discovery",
+    week: "Week 2",
+    track: "Validation",
     session: "Session 4",
-    title: "From Concept to Tangible Asset: Crafting Your Minimum Viable Product (MVP)",
+    title: "Customer Discovery & Market Research",
     desc:
-      "Understand MVP principles and their role in validating assumptions quickly and cost-effectively. Learn practical steps to transform an idea into a functional prototype.",
-    icon: "/icons/box-open.svg",
+      "Learn how to talk to users, uncover real pain points, and validate demand before building solutions.",
+    icon: "/icons/users.svg",
   },
   {
     week: "Week 2",
-    track: "Building",
+    track: "Validation",
     session: "Session 5",
-    title: "Establishing Your Legal Foundation: Business Registration & Compliance",
+    title: "ICP, Value Proposition & Market Size (Practical)",
     desc:
-      "Navigate essential legal structures for startups in India. Understand business registration, necessary licenses, and initial compliance requirements.",
-    icon: "/icons/document.svg",
+      "Define your ideal customer, sharpen your value proposition, and assess the real size of your opportunity.",
+    icon: "/icons/target.svg",
   },
+
   {
-    week: "Week 2",
+    week: "Week 3",
     track: "Building",
     session: "Session 6",
-    title: "Assembling Your Dream Team: Building a Cohesive & High-Performing Unit",
+    title: "Business Models & Pricing",
     desc:
-      "Learn strategies for identifying, attracting, and retaining top talent. Understand complementary skill sets, shared vision, and effective team dynamics.",
-    icon: "/icons/team.svg",
-  },
-  {
-    week: "Week 2",
-    track: "Building",
-    session: "Session 7",
-    title: "Strategizing for Scale & Profit: Business Model, Canvas & Monetization",
-    desc:
-      "Master the Business Model Canvas as a strategic tool. Explore business models, unit economics, and scalability drivers to build a sustainable venture.",
+      "Explore startup business models and learn how to price products based on value, not assumptions.",
     icon: "/icons/chart.svg",
   },
   {
-    week: "Week 2",
+    week: "Week 3",
     track: "Building",
-    session: "Session 8",
-    title: "Measuring Success: Defining & Tracking Key Metrics & KPIs",
+    session: "Session 7",
+    title: "MVP Thinking (No-Code / Pre-Tech)",
     desc:
-      "Understand the importance of data-driven decision making. Learn to define, track, and interpret key performance indicators relevant to your business stage.",
-    icon: "/icons/analytics.svg",
+      "Understand how to build and test MVPs quickly without over-engineering or unnecessary tech.",
+    icon: "/icons/rocket.svg",
+  },
+
+  {
+    week: "Week 4",
+    track: "Growth",
+    session: "Session 8",
+    title: "Distribution & GTM (India-First)",
+    desc:
+      "Learn go-to-market strategies designed for Indian users, constraints, and early traction.",
+    icon: "/icons/megaphone.svg",
+  },
+  {
+    week: "Week 4",
+    track: "Growth",
+    session: "Session 9",
+    title: "Your First 100 Users — Community as a Growth Engine",
+    desc:
+      "Acquire your first users by leveraging communities, content, and trust-based distribution.",
+    icon: "/icons/community.svg",
+  },
+  {
+    week: "Week 4",
+    track: "Growth",
+    session: "Session 10",
+    title: "Sales Basics & Closing Your First Users",
+    desc:
+      "Learn how founders sell, handle objections, and convert early users into paying customers.",
+    icon: "/icons/sales.svg",
+  },
+
+  {
+    week: "Week 5",
+    track: "Brand",
+    session: "Session 11",
+    title: "Branding, Narrative & Storytelling",
+    desc:
+      "Craft a strong founder story and brand narrative that resonates with users and investors.",
+    icon: "/icons/pen.svg",
+  },
+  {
+    week: "Week 5",
+    track: "Legal",
+    session: "Session 12",
+    title: "Legal Basics for Early-Stage Founders (Bonus)",
+    desc:
+      "Understand essential legal foundations to avoid costly mistakes in the early stages.",
+    icon: "/icons/legal.svg",
+  },
+
+  {
+    week: "Week 6",
+    track: "Pitch",
+    session: "Session 13",
+    title: "Brief for Pitch Day",
+    desc:
+      "Structure your pitch, clarify your story, and prepare for presenting your startup confidently.",
+    icon: "/icons/presentation.svg",
+  },
+  {
+    week: "Week 6",
+    track: "Pitch",
+    session: "Session 14",
+    title: "Pitch Day Practice",
+    desc:
+      "Present your startup, receive feedback, and learn from peer and mentor insights.",
+    icon: "/icons/feedback.svg",
+  },
+  {
+    week: "Week 6",
+    track: "Pitch",
+    session: "Session 15",
+    title: "Pitch Day",
+    desc:
+      "Final pitch presentations marking your journey from idea to execution.",
+    icon: "/icons/trophy.svg",
   },
 ];
 
