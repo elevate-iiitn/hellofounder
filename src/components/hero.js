@@ -7,10 +7,18 @@ import { koulen } from "@/lib/fonts";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[55vh] md:min-h-[60vh] w-full overflow-hidden">
+    <section
+      className="
+  relative
+  w-full
+  overflow-hidden
 
+  min-h-[45vh]
+  sm:min-h-[50vh]
+  md:min-h-[60vh]
+"
+    >
       <div className="relative z-10 flex h-full items-start justify-center px-4 pt-20">
-
         <div className="max-w-6xl text-center">
           {/* Main Headline */}
           <h1
