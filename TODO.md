@@ -16,7 +16,7 @@ Each task should be checked off once completed and verified.
 
 ## Hero Section
 
-- [ ] Remove **Apply** CTA from Hero section
+- [done] Remove **Apply** CTA from Hero section
 - [ ] Ensure **Mentors section is visible immediately on page load**
   - This may require reducing Hero typography size or vertical spacing
 
