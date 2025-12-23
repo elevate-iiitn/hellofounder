@@ -52,10 +52,10 @@ Each task should be checked off once completed and verified.
 
 ## FAQ Section
 
-- [ ] Remove text reveal / entry animations from FAQ answers
-- [ ] Highlight the active (opened) question clearly
+- [x] Remove text reveal / entry animations from FAQ answers
+- [x] Highlight the active (opened) question clearly
   - Improves user orientation and tracking within the FAQ list
 
 ---
 
-_Last updated: {{DATE}}_
+_Last updated: 23 Dec 2025_
