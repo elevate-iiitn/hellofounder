@@ -7,8 +7,10 @@ import { koulen } from "@/lib/fonts";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      <div className="relative z-10 flex h-full items-center justify-center px-4">
+    <section className="relative min-h-[55vh] md:min-h-[60vh] w-full overflow-hidden">
+
+      <div className="relative z-10 flex h-full items-start justify-center px-4 pt-20">
+
         <div className="max-w-6xl text-center">
           {/* Main Headline */}
           <h1
@@ -21,12 +23,10 @@ const Hero = () => {
             not{" "}
             <span className="relative inline-block italic text-amber-200">
               managers
-              {/* Pen-driven strike-through */}
               <motion.svg
                 viewBox="0 0 340 50"
                 className="pointer-events-none absolute left-0 top-1/2 w-full -translate-y-1/2"
               >
-                {/* Strike line */}
                 <motion.path
                   d="M12 26 L328 24"
                   fill="none"
@@ -41,68 +41,18 @@ const Hero = () => {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 />
-
-                {/* Pen */}
-                {/*
-                <motion.g
-                  initial={{ x: 0, opacity: 0 }}
-                  animate={{
-                    x: 316,
-                    opacity: [1, 1, 0],
-                    y: [0, -2, -6], // pen lifts
-                  }}
-                  transition={{
-                    delay: 2,
-                    duration: 0.6,
-                    ease: [0.22, 1, 0.36, 1],
-                    times: [0, 0.85, 1],
-                  }}
-                  transform="rotate(-6 0 26)" // subtle pen tilt
-                >
-                  <rect
-                    x="0"
-                    y="22"
-                    width="28"
-                    height="6"
-                    rx="3"
-                    fill="#111827"
-                  />
-                  <rect
-                    x="16"
-                    y="22.8"
-                    width="8"
-                    height="4.4"
-                    rx="2"
-                    fill="#1f2937"
-                  />
-                  <polygon points="28,23 34,25 28,27" fill="#E25555" />
-                </motion.g>
-                */}
               </motion.svg>
             </span>
           </h1>
 
-          {/* Subheading */}
-          <p
-            className="
-              mb-8
-              text-center
-              font-light
-              leading-tight
-              text-white
-              text-[12px]
-              sm:text-[14px]
-              md:text-[16px]
-            "
-          >
-            Get ready to <span className="text-teal-400">start building</span>
-            <br />
-            A 45-day program for students, early founders,
-            <br />
-            creators & professionals who want more.
+          {/* Subheading (kept commented) */}
+          {/*
+          <p className="mb-8 text-center font-light leading-tight text-white">
+            ...
           </p>
+          */}
 
-          {/* CTA Button (intentionally commented for later) */}
+          {/* CTA Button (kept commented) */}
           {/*
           <div className="flex justify-center">
             <Button />

@@ -20,16 +20,14 @@ export default function Home() {
     <>
       <Header />
 
-      <BackgroundSection className="min-h-screen">
+      <BackgroundSection className="relative">
         <section id="hero">
           <Hero />
         </section>
       </BackgroundSection>
 
       {/* MENTORS */}
-      <h2
-        className={`${koulen.className} mt-4 mb-4 text-center text-3xl text-white tracking-wide`}
-      >
+      <h2 className={`${koulen.className} mt-1 mb-2 text-center font-medium text-white text-3xl`}>
         Meet Our Mentors
       </h2>
 
