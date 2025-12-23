@@ -31,8 +31,8 @@ Each task should be checked off once completed and verified.
 
 ## Typography & Headings
 
-- [ ] Standardize all section headings across the site
-- [ ] Ensure all primary headings use **KOULEN** font consistently
+- [done] Standardize all section headings across the site
+- [done] Ensure all primary headings use **KOULEN** font consistently
 
 ---
 
