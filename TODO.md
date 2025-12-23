@@ -7,7 +7,7 @@ Each task should be checked off once completed and verified.
 
 ## Navbar
 
-- [ ] Adjust navbar vertical position slightly downward for better visual balance
+- [done] Adjust navbar vertical position slightly downward for better visual balance
 - [ ] Increase logo size in navbar once full-form logo asset is provided
 
 > Note: Awaiting updated logo image with full form text.
@@ -27,6 +27,7 @@ Each task should be checked off once completed and verified.
 - [done] Reduce vertical gap between the two lines of mentor text
 - [done] Maintain consistent heading style across Mentors section
 - [done] In mobile view card must appear smaller and with less space in between, also reduce space between hero and mentor section in mobile view.
+- [ ] Fix Scrolling logic / animation
 
 ---
 
@@ -58,8 +59,8 @@ Each task should be checked off once completed and verified.
 
 ## FAQ Section
 
-- [x] Remove text reveal / entry animations from FAQ answers
-- [x] Highlight the active (opened) question clearly
+- [done] Remove text reveal / entry animations from FAQ answers
+- [done] Highlight the active (opened) question clearly
   - Improves user orientation and tracking within the FAQ list
 
 ---
