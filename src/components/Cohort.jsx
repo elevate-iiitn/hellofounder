@@ -4,6 +4,7 @@ import SpotlightCard from "@/components/SpotlightCard";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { Calendar, Users, Rocket } from "lucide-react";
 import { poppins } from "@/lib/fonts";
+import { koulen } from "@/lib/fonts";
 import Link from "next/link";
 
 export default function CohortSpotlight() {
@@ -24,18 +25,19 @@ export default function CohortSpotlight() {
         <div className="flex flex-col lg:flex-row gap-12 items-start lg:items-end">
           {/* LEFT CONTENT */}
           <div className="flex-1 space-y-10">
-            {/* HEADING — POPPINS + SPARKLES */}
+            {/* HEADING — KOULEN + SPARKLES */}
             <SparklesText
               text="Founding cohort starts February 15, 2026"
-              className="
-                text-3xl
-                md:text-5xl
-                lg:text-6xl
-                font-semibold
-                text-white
-                leading-tight
-                tracking-wide
-              "
+              className={`
+                ${koulen.className}
+                text-2xl
+                md:text-4xl
+                lg:text-4xl
+                font-normal
+              text-white
+                leading-snug
+                tracking-wider
+          `}
             />
 
             {/* DETAILS */}

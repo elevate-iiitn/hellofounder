@@ -438,24 +438,18 @@ html, body {
   }
 
   .inside-heading .top,
-  .inside-heading .bottom {
-     font-size: clamp(2rem, 2.5vw, 3rem);
-    font-weight: 800;
-    color: white;
-  }
+.inside-heading .middle,
+.inside-heading .bottom {
+  font-family: var(--font-koulen);
+  font-size: clamp(1.9rem, 2.9vw, 2.8rem);
+  font-weight: 400; /* Koulen only has 400 */
+  color: #ffffff;
+  line-height: 1.1;
+}
 
-  .inside-heading .middle {
-    font-size: clamp(2rem, 3vw, 3.1rem);
-    font-weight: 900;
-    color: #ffffff;          /* white text */
-    line-height: 0.9;
-    
-  
-    /* remove gradient behavior */
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-  }
+
+
+
 @media (min-width: 768px) {
   .inside-heading .middle {
     white-space: nowrap;

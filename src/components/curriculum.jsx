@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { poppins } from "@/lib/fonts";
 
 /**
  * Curriculum overview component
@@ -18,8 +19,7 @@ const defaultCurriculum = [
     track: "Discovery",
     session: "Session 1",
     title: "Startup Reality, Standards & What We’re Building",
-    desc:
-      "Get a clear picture of the startup ecosystem, expectations, and execution standards that define real founders and real startups.",
+    desc: "Get a clear picture of the startup ecosystem, expectations, and execution standards that define real founders and real startups.",
     icon: "/icons/flag.svg",
   },
   {
@@ -27,8 +27,7 @@ const defaultCurriculum = [
     track: "Discovery",
     session: "Session 2",
     title: "Build in Public & LinkedIn as a Founder Tool",
-    desc:
-      "Learn how founders use LinkedIn to build credibility, attract opportunities, and grow influence by sharing their journey.",
+    desc: "Learn how founders use LinkedIn to build credibility, attract opportunities, and grow influence by sharing their journey.",
     icon: "/icons/linkedin.svg",
   },
   {
@@ -36,8 +35,7 @@ const defaultCurriculum = [
     track: "Discovery",
     session: "Session 3",
     title: "Idea Selection & Problem Framing",
-    desc:
-      "Identify meaningful problems, validate their importance, and frame startup ideas with long-term potential.",
+    desc: "Identify meaningful problems, validate their importance, and frame startup ideas with long-term potential.",
     icon: "/icons/lightbulb.svg",
   },
 
@@ -46,8 +44,7 @@ const defaultCurriculum = [
     track: "Validation",
     session: "Session 4",
     title: "Customer Discovery & Market Research",
-    desc:
-      "Learn how to talk to users, uncover real pain points, and validate demand before building solutions.",
+    desc: "Learn how to talk to users, uncover real pain points, and validate demand before building solutions.",
     icon: "/icons/users.svg",
   },
   {
@@ -55,8 +52,7 @@ const defaultCurriculum = [
     track: "Validation",
     session: "Session 5",
     title: "ICP, Value Proposition & Market Size (Practical)",
-    desc:
-      "Define your ideal customer, sharpen your value proposition, and assess the real size of your opportunity.",
+    desc: "Define your ideal customer, sharpen your value proposition, and assess the real size of your opportunity.",
     icon: "/icons/target.svg",
   },
 
@@ -65,8 +61,7 @@ const defaultCurriculum = [
     track: "Building",
     session: "Session 6",
     title: "Business Models & Pricing",
-    desc:
-      "Explore startup business models and learn how to price products based on value, not assumptions.",
+    desc: "Explore startup business models and learn how to price products based on value, not assumptions.",
     icon: "/icons/chart.svg",
   },
   {
@@ -74,8 +69,7 @@ const defaultCurriculum = [
     track: "Building",
     session: "Session 7",
     title: "MVP Thinking (No-Code / Pre-Tech)",
-    desc:
-      "Understand how to build and test MVPs quickly without over-engineering or unnecessary tech.",
+    desc: "Understand how to build and test MVPs quickly without over-engineering or unnecessary tech.",
     icon: "/icons/rocket.svg",
   },
 
@@ -84,8 +78,7 @@ const defaultCurriculum = [
     track: "Growth",
     session: "Session 8",
     title: "Distribution & GTM (India-First)",
-    desc:
-      "Learn go-to-market strategies designed for Indian users, constraints, and early traction.",
+    desc: "Learn go-to-market strategies designed for Indian users, constraints, and early traction.",
     icon: "/icons/megaphone.svg",
   },
   {
@@ -93,8 +86,7 @@ const defaultCurriculum = [
     track: "Growth",
     session: "Session 9",
     title: "Your First 100 Users — Community as a Growth Engine",
-    desc:
-      "Acquire your first users by leveraging communities, content, and trust-based distribution.",
+    desc: "Acquire your first users by leveraging communities, content, and trust-based distribution.",
     icon: "/icons/community.svg",
   },
   {
@@ -102,8 +94,7 @@ const defaultCurriculum = [
     track: "Growth",
     session: "Session 10",
     title: "Sales Basics & Closing Your First Users",
-    desc:
-      "Learn how founders sell, handle objections, and convert early users into paying customers.",
+    desc: "Learn how founders sell, handle objections, and convert early users into paying customers.",
     icon: "/icons/sales.svg",
   },
 
@@ -112,8 +103,7 @@ const defaultCurriculum = [
     track: "Brand",
     session: "Session 11",
     title: "Branding, Narrative & Storytelling",
-    desc:
-      "Craft a strong founder story and brand narrative that resonates with users and investors.",
+    desc: "Craft a strong founder story and brand narrative that resonates with users and investors.",
     icon: "/icons/pen.svg",
   },
   {
@@ -121,8 +111,7 @@ const defaultCurriculum = [
     track: "Legal",
     session: "Session 12",
     title: "Legal Basics for Early-Stage Founders (Bonus)",
-    desc:
-      "Understand essential legal foundations to avoid costly mistakes in the early stages.",
+    desc: "Understand essential legal foundations to avoid costly mistakes in the early stages.",
     icon: "/icons/legal.svg",
   },
 
@@ -131,8 +120,7 @@ const defaultCurriculum = [
     track: "Pitch",
     session: "Session 13",
     title: "Brief for Pitch Day",
-    desc:
-      "Structure your pitch, clarify your story, and prepare for presenting your startup confidently.",
+    desc: "Structure your pitch, clarify your story, and prepare for presenting your startup confidently.",
     icon: "/icons/presentation.svg",
   },
   {
@@ -140,8 +128,7 @@ const defaultCurriculum = [
     track: "Pitch",
     session: "Session 14",
     title: "Pitch Day Practice",
-    desc:
-      "Present your startup, receive feedback, and learn from peer and mentor insights.",
+    desc: "Present your startup, receive feedback, and learn from peer and mentor insights.",
     icon: "/icons/feedback.svg",
   },
   {
@@ -149,15 +136,14 @@ const defaultCurriculum = [
     track: "Pitch",
     session: "Session 15",
     title: "Pitch Day",
-    desc:
-      "Final pitch presentations marking your journey from idea to execution.",
+    desc: "Final pitch presentations marking your journey from idea to execution.",
     icon: "/icons/trophy.svg",
   },
 ];
 
 export default function Curriculum({ data = defaultCurriculum }) {
   return (
-    <section className="py-16 md:py-24">
+    <section className={`py-16 md:py-24 ${poppins.className}`}>
       <div className="mx-auto max-w-6xl px-6">
         {/* <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-extrabold text-white">
@@ -178,7 +164,10 @@ export default function Curriculum({ data = defaultCurriculum }) {
         </div>
 
         <div className="mt-8 text-center text-sm text-muted-foreground">
-          <em>Full curriculum will be shared with enrolled participants. Schedule subject to minor updates.</em>
+          <em>
+            Full curriculum will be shared with enrolled participants. Schedule
+            subject to minor updates.
+          </em>
         </div>
       </div>
     </section>
@@ -216,14 +205,24 @@ function SessionCard({ item, index }) {
         <div className="shrink-0">
           {/* icon placeholder - replace paths with your SVGs in /public/icons */}
           {icon ? (
-            <Image src={icon} alt="" width={36} height={36} className="object-contain" />
+            <Image
+              src={icon}
+              alt=""
+              width={36}
+              height={36}
+              className="object-contain"
+            />
           ) : (
-            <div className="w-9 h-9 rounded-md bg-slate-700/30 flex items-center justify-center text-sm">S</div>
+            <div className="w-9 h-9 rounded-md bg-slate-700/30 flex items-center justify-center text-sm">
+              S
+            </div>
           )}
         </div>
       </div>
 
-      <h3 className="mt-4 text-sm md:text-base font-semibold text-white">{title}</h3>
+      <h3 className="mt-4 text-sm md:text-base font-semibold text-white">
+        {title}
+      </h3>
 
       <div className="mt-3 text-sm text-muted-foreground">
         <RevealText text={desc} />
@@ -247,9 +246,20 @@ const RevealText = ({ text = "" }) => {
   };
 
   return (
-    <motion.p variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="leading-relaxed">
+    <motion.p
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="leading-relaxed"
+    >
       {text.split("").map((ch, i) => (
-        <motion.span key={i} variants={letterAnim} transition={{ duration: 0.18 }} className="inline-block">
+        <motion.span
+          key={i}
+          variants={letterAnim}
+          transition={{ duration: 0.18 }}
+          className="inline-block"
+        >
           {ch === " " ? "\u00A0" : ch}
         </motion.span>
       ))}

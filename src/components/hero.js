@@ -7,12 +7,12 @@ import { koulen } from "@/lib/fonts";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
+    <section className="relative h-screen w-full overflow-hidden">
+      <div className="relative z-10 flex h-full items-center justify-center px-4">
         <div className="max-w-6xl text-center">
           {/* Main Headline */}
           <h1
-            className={`${koulen.className} relative mb-8 text-5xl leading-none tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl`}
+            className={`${koulen.className} relative mb-6 text-5xl leading-none tracking-wide text-white sm:text-6xl md:text-7xl lg:text-8xl`}
           >
             The only <span className="font-light text-teal-400">B-School</span>
             <br />
@@ -43,7 +43,8 @@ const Hero = () => {
                 />
 
                 {/* Pen */}
-                {/* <motion.g
+                {/*
+                <motion.g
                   initial={{ x: 0, opacity: 0 }}
                   animate={{
                     x: 316,
@@ -57,36 +58,42 @@ const Hero = () => {
                     times: [0, 0.85, 1],
                   }}
                   transform="rotate(-6 0 26)" // subtle pen tilt
-                > */}
-                {/* pen body */}
-                {/* <rect
+                >
+                  <rect
                     x="0"
                     y="22"
                     width="28"
                     height="6"
                     rx="3"
                     fill="#111827"
-                  /> */}
-                {/* pen grip */}
-                {/* <rect
+                  />
+                  <rect
                     x="16"
                     y="22.8"
                     width="8"
                     height="4.4"
                     rx="2"
                     fill="#1f2937"
-                  /> */}
-                {/* pen tip */}
-                {/* <polygon points="28,23 34,25 28,27" fill="#E25555" /> */}
-                {/* </motion.g> */}
+                  />
+                  <polygon points="28,23 34,25 28,27" fill="#E25555" />
+                </motion.g>
+                */}
               </motion.svg>
             </span>
           </h1>
 
           {/* Subheading */}
           <p
-            className="mb-12 text-center font-light leading-tight text-white
-            text-[12px] sm:text-[14px] md:text-[16px]"
+            className="
+              mb-8
+              text-center
+              font-light
+              leading-tight
+              text-white
+              text-[12px]
+              sm:text-[14px]
+              md:text-[16px]
+            "
           >
             Get ready to <span className="text-teal-400">start building</span>
             <br />
@@ -95,14 +102,15 @@ const Hero = () => {
             creators & professionals who want more.
           </p>
 
-          {/* CTA Button */}
-          {/*<div className="flex justify-center">
+          {/* CTA Button (intentionally commented for later) */}
+          {/*
+          <div className="flex justify-center">
             <Button />
           </div>
           */}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,5 @@
 import "./globals.css";
-import { poppins } from "@/lib/fonts";
+import { poppins, koulen } from "@/lib/fonts";
 
 export const metadata = {
   title: "Indian School of Founders",
@@ -9,9 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.className}>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${koulen.variable}`}
+    >
       <body
-        className="font-sans bg-black text-white antialiased"
+        className="bg-black text-white antialiased"
         style={{
           margin: 0,
           padding: 0,

@@ -13,93 +13,93 @@ import InsideHelloFounder from "@/components/InsideHelloFounder";
 import PricingCard from "../components/PricingCard";
 import BackgroundSection from "../components/BackgroundSection";
 import MentorsSectionRL from "@/components/MentorsSectionRL";
+import { koulen } from "@/lib/fonts";
 
 export default function Home() {
   return (
     <>
-      {/* <div className="absolute inset-0 z-0 pointer-events-none">
-        <DarkVeil />
-      </div> */}
       <Header />
+
       <BackgroundSection className="min-h-screen">
         <section id="hero">
           <Hero />
         </section>
       </BackgroundSection>
 
-      <h2 className="mb-5 text-center font-medium text-white text-3xl tracking-tight md:text-3xl">
-        <span className="text-white">Meet Our </span>
-        <span className="font-semibold text-white-400">Mentors</span>
+      {/* MENTORS */}
+      <h2
+        className={`${koulen.className} mt-4 mb-4 text-center text-3xl text-white tracking-wide`}
+      >
+        Meet Our Mentors
       </h2>
-      {/* <br/><br/><br/><br/><br/><br/><br/> */}
+
       <MentorsSectionLR />
       <MentorsSectionRL />
 
       <InsideHelloFounder />
 
-      <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-        <span className="text-white">Learn all the relevant skills to be </span>
+      {/* SKILLS */}
+      <h2
+        className={`${koulen.className} mb-5 text-center text-xl md:text-3xl text-white tracking-wide`}
+      >
+        Learn all the relevant skills to be
         <br />
-        <span className="font-semibold text-white-400">Investment Ready</span>
+        <span>Investment Ready</span>
       </h2>
-      <br></br>
+
       <Skill />
 
       <PixelCard />
-      <br />
-      <br />
-      <br />
 
+      {/* CURRICULUM */}
       <h2
         id="curriculum"
-        className="scroll-mt-24 mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl"
+        className={`${koulen.className} scroll-mt-24 mb-5 text-center text-xl md:text-3xl text-white tracking-wide`}
       >
-        <span className="text-white">Curriculum Overview</span>
+        Curriculum Overview
         <br />
-        <span className="font-semibold text-white-400">
-          Designed for Emerging Founders
-        </span>
+        <span>Designed for Emerging Founders</span>
       </h2>
+
       <Curriculum />
-      {/* <br/><br/><br/><br/><br/><br/><br/> */}
-      {/* PRICING (single anchor, responsive content inside) */}
+
+      {/* PRICING */}
       <section
         id="pricing"
         className="scroll-mt-24 md:scroll-mt-32 lg:scroll-mt-40"
       >
-        {/* MOBILE */}
         <div className="flex justify-center items-center w-full py-12 lg:hidden">
           <PricingCard />
         </div>
 
-        {/* DESKTOP */}
         <div className="hidden lg:block">
           <ApplyCTA />
         </div>
       </section>
 
-      <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-        <span className="text-white">Program Certification</span>
+      {/* CERTIFICATE */}
+      <h2
+        className={`${koulen.className} mb-5 text-center text-xl md:text-3xl text-white tracking-wide`}
+      >
+        Program Certification
         <br />
-        <span className="font-semibold text-white-400">
+        <span className="opacity-80">
           Marking Your Transition from Learner to Builder
         </span>
       </h2>
+
       <Certificate />
-      {/* <br/><br/><br/><br/><br/><br/><br/> */}
+
+      {/* FAQS */}
       <h2
         id="faqs"
-        className="scroll-mt-24 mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl"
+        className={`${koulen.className} scroll-mt-24 mb-5 text-center text-xl md:text-3xl text-white tracking-wide`}
       >
-        <span className="text-white">Frequently Asked </span>
-        <span className="font-semibold text-white-400">Questions</span>
+        Frequently Asked Questions
       </h2>
+
       <FAQs />
-      {/* <br/><br/><br/><br/><br/><br/><br/> */}
-      {/* <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-          <span className="text-white">Footer{' '}</span>
-          <span className="font-semibold text-teal-400">Section</span>
-    </h2> */}
+
       <Footer />
     </>
   );
