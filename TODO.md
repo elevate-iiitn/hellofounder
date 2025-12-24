@@ -34,6 +34,7 @@ Each task should be checked off once completed and verified.
 ## Inside and Cohort Section
 
 - [done] Update date to 1st March, 2026
+- [done] Update inside section description
 
 ## Typography & Headings
 
