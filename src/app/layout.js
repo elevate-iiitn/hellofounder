@@ -3,16 +3,13 @@ import { poppins, koulen } from "@/lib/fonts";
 
 export const metadata = {
   title: "Indian School of Founders",
-  description: "nextjs + react + tailwindcss.",
+  description: "The only B-School for founders, not managers",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${poppins.variable} ${koulen.variable}`}
-    >
+    <html lang="en" className={`${poppins.variable} ${koulen.variable}`}>
       <body
         className="bg-black text-white antialiased"
         style={{
