@@ -2,41 +2,38 @@
 
 import SpotlightCard from "@/components/SpotlightCard";
 import { SparklesText } from "@/components/ui/sparkles-text";
+import { koulen } from "@/lib/fonts";
 
 export default function InsideHelloFounder() {
   return (
-    <section className="bg-black px-8 py-12 relative overflow-hidden">
+    <section className="bg-black px-8 py-12 relative overflow-hidden font-[inherit]">
       <div className="ambient-left-blob pointer-events-none" />
       <div className="ambient-right-blob pointer-events-none" />
 
       <div className="max-w-6xl mx-auto pt-2.5 flex flex-col md:flex-row gap-10 items-start md:items-stretch relative z-10">
         {/* LEFT SIDE */}
-        <div className="md:w-1/2 text-white">
-          <div className="inside-heading">
+        <div className="md:w-1/2 text-white font-poppins">
+          {/* HEADING — NOT POPPINS */}
+          <div className={`inside-heading ${koulen.className}`}>
             <span className="top">Inside</span>
             <span className="middle shimmer">Indian School of Founders</span>
             <span className="bottom">Program</span>
           </div>
 
+          {/* DESCRIPTION — POPPINS */}
           <p className="inside-description mt-8 max-w-xl">
-            The Indian School of Founders Program is designed for ambitious
-            builders and emerging founders who want to accelerate their journey
-            into startups. Whether you're exploring ideas, validating early
-            concepts, or preparing to operate inside a high-pace founder’s
-            office — this program gives you the skills, mindset, and structure
-            to level up fast.
-          </p>
-
-          <p className="inside-description mt-4 max-w-xl">
-            Guided by operators, early-stage founders, and product leaders,
-            HelloFounder blends zero-to-one execution, founder-side problem
-            solving, and high-context learning so you can build with clarity and
-            confidence.
+            A hands-on program for builders who want to start, validate, and
+            build real startups. Whether you’re shaping an idea, validating a
+            problem, or preparing to operate like a founder, ISF gives you the
+            mindset, tools, and execution framework to move fast and build
+            right. Learn directly from founders and operators, not professors.
+            Less theory. More doing. Clear thinking over noise. Build with
+            clarity. Execute with confidence.
           </p>
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="md:w-1/2 w-full">
+        <div className="md:w-1/2 w-full font-poppins">
           <SpotlightCard>
             <SparklesText text="Who's this for?" />
 
