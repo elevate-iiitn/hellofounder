@@ -7,13 +7,12 @@ const mentors = [
   { photo: "/images/darika_jain1.png" },
   { photo: "/images/prabal_monga1.png" },
   { photo: "/images/mansukh_singh1.png" },
+  { photo: "/images/kunal_jiwani1.png" },
 ];
 
 export default function MentorsSectionLR() {
   return (
-    <div
-      className="w-full overflow-hidden bg-black py-2 sm:py-4"
-    >
+    <div className="w-full overflow-hidden bg-black py-2 sm:py-4">
       <style>{`
   @keyframes marqueeLR {
     from { transform: translateX(-50%); }
@@ -44,17 +43,15 @@ export default function MentorsSectionLR() {
   }
 `}</style>
 
-
       <div className="wrapper">
         <div className="track-lr">
           {[...mentors, ...mentors].map((mentor, index) => (
-           <div
-  key={index}
-  className="scale-[0.95] sm:scale-90 md:scale-100 origin-center"
->
-  <MentorCard {...mentor} />
-</div>
-
+            <div
+              key={index}
+              className="scale-[0.95] sm:scale-90 md:scale-100 origin-center"
+            >
+              <MentorCard {...mentor} />
+            </div>
           ))}
         </div>
       </div>
