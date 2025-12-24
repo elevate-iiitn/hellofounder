@@ -45,9 +45,9 @@ Each task should be checked off once completed and verified.
 
 ## Call-to-Action (CTA)
 
-- [ ] Update **Apply CTA card** to use a full green gradient
-- [ ] Remove white background from CTA (current styling feels inconsistent)
-- [ ] Make two pricings , Early Bird before 1 Jan, 2026 as 4999 and then 7999
+- [done] Update **Apply CTA card** to use a full green gradient
+- [done] Remove white background from CTA (current styling feels inconsistent)
+- [done] Make two pricings , Early Bird before 1 Jan, 2026 as 4999 and then 7999
 
 ---
 
