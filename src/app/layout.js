@@ -1,5 +1,6 @@
 import "./globals.css";
 import { poppins, koulen } from "@/lib/fonts";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Indian School of Founders",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         }}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
