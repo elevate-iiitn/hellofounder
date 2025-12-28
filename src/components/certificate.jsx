@@ -23,8 +23,8 @@ export default function Certificate() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="rounded-xl p-[2px] bg-gradient-to-br from-teal-300 via-teal-400 to-teal-500 shadow-xl w-full max-w-md">
-              <div className="relative bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-700 p-4 aspect-[4/3] flex items-center justify-center">
+            <div className="rounded-xl p-[2px] shadow-xl w-full max-w-md">
+              <div className="relative p-4 aspect-[4/3] flex items-center justify-center">
                 <Image
                   src="/images/ISF_certificate.png"
                   alt="Certificate Preview"
@@ -87,8 +87,8 @@ export default function Certificate() {
             {/* Highlight Box */}
             <div className="rounded-md bg-amber-50/20 border border-amber-200/30 p-4">
               <p className="text-sm sm:text-base text-amber-200 leading-relaxed">
-                <strong>Your Gateway to Success —</strong> Joining ISF
-                means joining a community of top young founders. This official
+                <strong>Your Gateway to Success —</strong> Joining ISF means
+                joining a community of top young founders. This official
                 certificate opens doors to India’s most impactful startup
                 circles.
               </p>
@@ -97,17 +97,17 @@ export default function Certificate() {
             {/* CTA */}
             <div className="pt-2">
               <div className="flex justify-center pt-2">
-              <a
-  href="https://tally.so/r/gDayXN"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-fit px-6 py-3 rounded-lg text-white font-medium
+                <a
+                  href="https://tally.so/r/gDayXN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-fit px-6 py-3 rounded-lg text-white font-medium
              bg-gradient-to-r from-teal-600 to-teal-600
              hover:from-teal-500 hover:to-teal-400
              shadow-md flex items-center justify-center gap-2"
->
-  Claim Your Certificate
-  {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                >
+                  Claim Your Certificate
+                  {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
     <path
       d="M5 12h14M12 5l7 7-7 7"
       stroke="currentColor"
@@ -116,8 +116,8 @@ export default function Certificate() {
       strokeLinejoin="round"
     />
   </svg> */}
-</a></div>
-
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
