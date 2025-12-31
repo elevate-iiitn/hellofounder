@@ -56,22 +56,22 @@ export default function PricingCard({
           {/* Early Bird */}
           <div>
             <p className="text-[11px] uppercase tracking-widest text-teal-300 mb-1">
-              Early Bird · Before 1 Jan 2026
+              Regular Price
             </p>
             <p className="text-4xl font-bold tracking-tight text-teal-300 sm:text-5xl">
-              ₹4,999
+              ₹7,499
             </p>
           </div>
 
           {/* Regular Price */}
-          <div className="opacity-70">
+          {/* <div className="opacity-70">
             <p className="text-[11px] uppercase tracking-widest text-gray-400 mb-1">
               Regular Price
             </p>
             <p className="text-sm sm:text-base text-gray-400 line-through">
               ₹7,999
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* CTA */}

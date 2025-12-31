@@ -42,24 +42,24 @@ export default function ApplyCTA() {
               {/* Early Bird */}
               <div className="text-center">
                 <p className="text-teal-300 text-xs uppercase tracking-widest mb-2">
-                  Early Bird{" "}
-                  <span className="opacity-70">(Before 1 Jan 2026)</span>
+                  Regular Price{" "}
+                  {/* <span className="opacity-70">(Before 1 Jan 2026)</span> */}
                 </p>
-                <p className="text-4xl font-bold text-teal-300">₹4,999</p>
+                <p className="text-4xl font-bold text-teal-300">₹7,499</p>
               </div>
 
               {/* Divider */}
-              <div className="hidden sm:block h-12 w-px bg-white/20" />
+              {/* <div className="hidden sm:block h-12 w-px bg-white/20" /> */}
 
               {/* Regular */}
-              <div className="text-center opacity-80">
+              {/* <div className="text-center opacity-80">
                 <p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
                   Regular Price
                 </p>
                 <p className="text-3xl font-semibold text-gray-400 line-through">
                   ₹7,999
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* CTA */}
