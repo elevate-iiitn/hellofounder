@@ -26,7 +26,7 @@ export default function FAQs() {
       id: "item-3",
       question: "What is the cost and refund policy?",
       answer:
-        "The Founding Cohort is priced at ₹4,999. This includes all sessions, mentorship, community access, and lifetime consulting. Refunds are available only before the cohort officially begins.",
+        "The Founding Cohort is priced at ₹7,499. This includes all sessions, mentorship, community access, and lifetime consulting. Refunds are available only before the cohort officially begins.",
     },
     {
       id: "item-4",
